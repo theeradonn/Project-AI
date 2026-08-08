@@ -3,3 +3,5 @@ uvicorn[standard]==0.34.2
 supabase==2.15.1
 httpx==0.28.1
 python-dotenv==1.1.0
+# ใช้เก็บ/เทียบ embedding vectors ของ Evidence Bank (pre-filter ด่านที่ 2)
+numpy==2.2.1

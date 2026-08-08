@@ -19,6 +19,7 @@ from datetime import datetime, timezone
 from supabase import Client
 
 from ollama_client import analyze_risk
+from prefilter import DEFAULT_CONTEXT_TURNS, PreFilterDecision, should_escalate
 
 logger = logging.getLogger(__name__)
 
@@ -98,6 +99,78 @@ def _process_all_rooms(supabase: Client) -> bool:
     return True
 
 
+def _run_prefilter(all_messages: list[dict], unprocessed_ids: list[str]) -> PreFilterDecision:
+    """
+    รัน pre-filter บน "หน้าต่าง" ที่ประกอบด้วยข้อความใหม่ + บริบทย้อนหลัง
+
+    ต้องมองย้อนหลังด้วย เพราะสัญญาณอันตรายมักอยู่ใน turn ก่อนหน้า เช่น
+    ข้อความปัจจุบัน "โอนละนะ" ดูปกติ แต่ turn ก่อนคือ "โอนตรงเข้าบัญชีนี้แทนนะ"
+
+    Args:
+        all_messages: ข้อความทั้งหมดในห้อง เรียงเก่า→ใหม่
+        unprocessed_ids: id ของข้อความใหม่ที่ยังไม่ได้ประมวลผล
+
+    Returns:
+        PreFilterDecision — ถ้า escalate=False จะข้ามการเรียก Qwen
+    """
+    unprocessed_set = set(unprocessed_ids)
+    new_indices = [i for i, m in enumerate(all_messages) if m.get("id") in unprocessed_set]
+
+    # หาไม่เจอข้อความใหม่ (ไม่ควรเกิด) → escalate ไว้ก่อนเพื่อความปลอดภัย
+    if not new_indices:
+        return PreFilterDecision(
+            escalate=True,
+            stage="fail_open",
+            reason="ระบุข้อความใหม่ในห้องไม่ได้ — วิเคราะห์ไว้ก่อนเพื่อความปลอดภัย",
+        )
+
+    start = max(0, new_indices[0] - DEFAULT_CONTEXT_TURNS)
+    window = all_messages[start:]
+
+    return should_escalate(
+        current_message=window[-1],
+        recent_messages=window[:-1],
+        context_turns=len(window) - 1,
+    )
+
+
+def _mark_skipped(
+    supabase: Client,
+    all_messages: list[dict],
+    unprocessed_ids: list[str],
+    previous_risk: int,
+) -> None:
+    """
+    Mark ข้อความว่าประมวลผลแล้ว โดยไม่เรียก Qwen (กรณี pre-filter ตัดสินว่าไม่ต้องวิเคราะห์)
+
+    คง risk_percentage เดิมของห้องไว้ (risk สะสมขึ้นอย่างเดียว ไม่มีวันลด)
+    และไม่แตะตาราง chatrooms เลย เพราะคะแนนห้องไม่เปลี่ยน
+
+    Args:
+        supabase: Supabase client
+        all_messages: ข้อความทั้งหมดในห้อง (ใช้คำนวณเลข turn)
+        unprocessed_ids: id ของข้อความที่ต้อง mark
+        previous_risk: risk score ปัจจุบันของห้อง ที่จะคงไว้
+    """
+    turn_by_id = {msg["id"]: i + 1 for i, msg in enumerate(all_messages)}
+    for msg_id in unprocessed_ids:
+        (
+            supabase.table("messages")
+            .update(
+                {
+                    "processed": True,
+                    "risk_percentage": previous_risk,
+                    "reasoning": "ข้ามการวิเคราะห์ — pre-filter ไม่พบสัญญาณเสี่ยงในข้อความนี้",
+                    "detected_flags": [],
+                    "scam_pattern": None,
+                    "turn": turn_by_id.get(msg_id),
+                }
+            )
+            .eq("id", msg_id)
+            .execute()
+        )
+
+
 def _process_room(supabase: Client, room_id: str, unprocessed_ids: list[str]) -> None:
     """
     ประมวลผลความเสี่ยงสำหรับห้องแชทเดียว
@@ -135,6 +208,23 @@ def _process_room(supabase: Client, room_id: str, unprocessed_ids: list[str]) ->
             return
 
         logger.info(f"📋 [{room_id}] รวบรวมได้ {len(all_messages)} ข้อความ")
+
+        # === Pre-filter: ตัดสินใจก่อนว่าต้องเรียก Qwen ตัวหลักไหม ===
+        # ข้อความส่วนใหญ่ในแชทซื้อขายเป็นเรื่องปกติ (ถามราคา ต่อรอง ถามสเปค) ไม่มีสัญญาณเสี่ยงเลย
+        # การกรองก่อนช่วยประหยัด VRAM/เวลา เพราะไม่ต้องส่ง full history ให้ qwen3:8b ทุกข้อความ
+        decision = _run_prefilter(all_messages, unprocessed_ids)
+
+        if not decision.escalate:
+            logger.info(
+                f"⏭️ [{room_id}] ข้ามการวิเคราะห์ (pre-filter: {decision.stage}) — "
+                f"{decision.reason} | คง risk เดิมที่ {previous_risk}%"
+            )
+            _mark_skipped(supabase, all_messages, unprocessed_ids, previous_risk)
+            return
+
+        logger.info(
+            f"🚨 [{room_id}] pre-filter สั่งวิเคราะห์ต่อ (ด่าน: {decision.stage}) — {decision.reason}"
+        )
 
         # === ส่งไปวิเคราะห์ที่ Ollama ===
         risk_result = analyze_risk(all_messages)
