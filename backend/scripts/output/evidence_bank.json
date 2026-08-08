@@ -1,0 +1,3494 @@
+[
+  {
+    "text": "ทักไลน์มาคุยกันดีกว่าจ้า แอดไลน์ @sale_iphone_th2",
+    "pattern": "A3",
+    "source_conversation_id": "conv_001",
+    "turn": 4
+  },
+  {
+    "text": "ไม่มีปลายทางจ้า โอนก่อนอย่างเดียวน้า",
+    "pattern": "B3",
+    "source_conversation_id": "conv_001",
+    "turn": 6
+  },
+  {
+    "text": "พอดีแม่ค้าอยู่ต่างจังหวัด",
+    "pattern": "D3",
+    "source_conversation_id": "conv_001",
+    "turn": 8
+  },
+  {
+    "text": "ไม่ได้ถ่ายเพิ่มแล้วน้า",
+    "pattern": "D1",
+    "source_conversation_id": "conv_001",
+    "turn": 10
+  },
+  {
+    "text": "มีคนทักมาถามเยอะมาก",
+    "pattern": "B4",
+    "source_conversation_id": "conv_001",
+    "turn": 12
+  },
+  {
+    "text": "ถ้าโอนตอนนี้ลดให้อีก 500 เลยจ้า",
+    "pattern": "C4",
+    "source_conversation_id": "conv_001",
+    "turn": 12
+  },
+  {
+    "text": "ไม่สะดวกนัดเจอค่ะ ส่งไปรษณีย์อย่างเดียวเลยจ้า",
+    "pattern": "B2",
+    "source_conversation_id": "conv_002",
+    "turn": 4
+  },
+  {
+    "text": "ไม่เอาคนกลางนะ ยุ่งยากมากๆ เลยค่ะ",
+    "pattern": "A1",
+    "source_conversation_id": "conv_002",
+    "turn": 6
+  },
+  {
+    "text": "ไม่สะดวกถ่ายเพิ่มจ้า",
+    "pattern": "D1",
+    "source_conversation_id": "conv_002",
+    "turn": 8
+  },
+  {
+    "text": "โอนเข้าเลขนี้ได้เลยค่ะ ธนาคารกสิกรไทย 0987654321 ชื่อบัญชี สมชาย นะคะ",
+    "pattern": "A2",
+    "source_conversation_id": "conv_002",
+    "turn": 10
+  },
+  {
+    "text": "ทักมาทาง Line จะได้คุยง่ายกว่านะ",
+    "pattern": "A3",
+    "source_conversation_id": "conv_003",
+    "turn": 2
+  },
+  {
+    "text": "ต้องบวกค่าเปลี่ยนชื่อกับค่าดำเนินการอีก 1500 นะคะ",
+    "pattern": "B1",
+    "source_conversation_id": "conv_003",
+    "turn": 6
+  },
+  {
+    "text": "พอดีต้องจ้างคนไปทำเรื่องที่เคาน์เตอร์น่ะค่ะ",
+    "pattern": "C1",
+    "source_conversation_id": "conv_003",
+    "turn": 8
+  },
+  {
+    "text": "พอดีเค้าจะย้ายบ้านพรุ่งนี้แล้ว ต้องรีบขายวันนี้เลยจ้า",
+    "pattern": "C3",
+    "source_conversation_id": "conv_003",
+    "turn": 10
+  },
+  {
+    "text": "ไม่ได้ถ่ายใหม่เลย",
+    "pattern": "D1",
+    "source_conversation_id": "conv_004",
+    "turn": 6
+  },
+  {
+    "text": "ไม่มีปลายทางครับ โอนก่อนเท่านั้นครับผม",
+    "pattern": "B3",
+    "source_conversation_id": "conv_004",
+    "turn": 8
+  },
+  {
+    "text": "ไม่เอาคนกลางนะ ยุ่งยาก",
+    "pattern": "A1",
+    "source_conversation_id": "conv_004",
+    "turn": 10
+  },
+  {
+    "text": "ไม่อยากค้นถุงมาถ่ายเพิ่มแล้วค่ะ",
+    "pattern": "D1",
+    "source_conversation_id": "conv_005",
+    "turn": 4
+  },
+  {
+    "text": "โอนเต็มจำนวนวันนี้ลดให้อีกน้า",
+    "pattern": "C4",
+    "source_conversation_id": "conv_005",
+    "turn": 6
+  },
+  {
+    "text": "โอนเข้าชื่อ สุภาภรณ์ แทนนะ บัญชีตัวเองมีปัญหาจ้า",
+    "pattern": "A2",
+    "source_conversation_id": "conv_005",
+    "turn": 8
+  },
+  {
+    "text": "ต้องรีบโอนเลยนะ อีก 10 นาทีจะปิดยอดรอบเช้าแล้วจ้า",
+    "pattern": "B4",
+    "source_conversation_id": "conv_005",
+    "turn": 10
+  },
+  {
+    "text": "พอดีพี่อยู่เชียงรายจ้า อยู่ไกลเลย",
+    "pattern": "D3",
+    "source_conversation_id": "conv_006",
+    "turn": 4
+  },
+  {
+    "text": "ไม่มีปลายทางจ้า พี่ไม่สะดวกทำระบบน่ะจ้ะ",
+    "pattern": "B3",
+    "source_conversation_id": "conv_006",
+    "turn": 6
+  },
+  {
+    "text": "แอดไลน์คุยต่อนะ @game_shop2024",
+    "pattern": "A3",
+    "source_conversation_id": "conv_006",
+    "turn": 8
+  },
+  {
+    "text": "ไม่ได้ถ่ายใหม่จ้า",
+    "pattern": "D1",
+    "source_conversation_id": "conv_006",
+    "turn": 10
+  },
+  {
+    "text": "ไม่เอาคนกลางนะ ยุ่งยาก เรื่องเยอะ",
+    "pattern": "A1",
+    "source_conversation_id": "conv_007",
+    "turn": 6
+  },
+  {
+    "text": "แต่ต้องรีบโอนเลยนะ",
+    "pattern": "B4",
+    "source_conversation_id": "conv_007",
+    "turn": 8
+  },
+  {
+    "text": "ถ้ารับจริงลดให้พิเศษเลยนะ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_007",
+    "turn": 8
+  },
+  {
+    "text": "ไม่สะดวกหยิบมาถ่ายเพิ่มแล้วครับ",
+    "pattern": "D1",
+    "source_conversation_id": "conv_008",
+    "turn": 4
+  },
+  {
+    "text": "ต้องบวกเพิ่มอีก 1000 เป็น 5500 จ้า",
+    "pattern": "B1",
+    "source_conversation_id": "conv_008",
+    "turn": 8
+  },
+  {
+    "text": "โอนเข้าบัญชีชื่อ สมพงษ์ แทนนะ",
+    "pattern": "A2",
+    "source_conversation_id": "conv_008",
+    "turn": 10
+  },
+  {
+    "text": "พอดีผมอยู่ตากครับ ไกลหน่อย",
+    "pattern": "D3",
+    "source_conversation_id": "conv_009",
+    "turn": 4
+  },
+  {
+    "text": "ไม่มีปลายทางครับ โอนเต็มจำนวนอย่างเดียวเลยครับผม",
+    "pattern": "B3",
+    "source_conversation_id": "conv_009",
+    "turn": 6
+  },
+  {
+    "text": "ทักไลน์มาคุยกันดีกว่าครับ แอดไลน์ id: wave_tak2024",
+    "pattern": "A3",
+    "source_conversation_id": "conv_009",
+    "turn": 8
+  },
+  {
+    "text": "พอดีรีบใช้เงินไปจ่ายค่ารักษาพยาบาลแม่ด่วนด้วยครับ",
+    "pattern": "C3",
+    "source_conversation_id": "conv_009",
+    "turn": 10
+  },
+  {
+    "text": "ไม่สะดวกนัดเจอครับผม ทำงานประจำ ไม่มีเวลานัดเจอเลย",
+    "pattern": "B2",
+    "source_conversation_id": "conv_010",
+    "turn": 4
+  },
+  {
+    "text": "ไม่รับคนกลางนะ ยุ่งยาก เสียเวลาตรวจสอบหลายวัน",
+    "pattern": "A1",
+    "source_conversation_id": "conv_010",
+    "turn": 6
+  },
+  {
+    "text": "โอนเต็มจำนวนทันทีนะ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_010",
+    "turn": 8
+  },
+  {
+    "text": "ต้องรีบโอนเลยนะครับ พอดีมีอีกคิวรอโอนอยู่",
+    "pattern": "B4",
+    "source_conversation_id": "conv_010",
+    "turn": 10
+  },
+  {
+    "text": "พอดีแม่ค้าอยู่ ตจว ค่ะ สะดวกส่งแฟลชอย่างเดียวเลย",
+    "pattern": "D3",
+    "source_conversation_id": "conv_011",
+    "turn": 6
+  },
+  {
+    "text": "ไม่มีปลายทางจ้า",
+    "pattern": "B3",
+    "source_conversation_id": "conv_011",
+    "turn": 8
+  },
+  {
+    "text": "รีบหน่อยนะเธอ มีคนทักมาถามอีกคนแล้ว",
+    "pattern": "B4",
+    "source_conversation_id": "conv_011",
+    "turn": 12
+  },
+  {
+    "text": "ถ้าโอนตอนนี้ให้ราคาพิเศษเลยนะ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_011",
+    "turn": 12
+  },
+  {
+    "text": "ไม่สะดวกนัดเจอค่ะ ส่งไปรษณีย์อย่างเดียว",
+    "pattern": "B2",
+    "source_conversation_id": "conv_012",
+    "turn": 8
+  },
+  {
+    "text": "โอนเข้าชื่อ สุรชัย แทนนะ",
+    "pattern": "A2",
+    "source_conversation_id": "conv_012",
+    "turn": 10
+  },
+  {
+    "text": "ทักมาทาง Line จะได้คุยง่ายกว่า",
+    "pattern": "A3",
+    "source_conversation_id": "conv_013",
+    "turn": 4
+  },
+  {
+    "text": "ถ้ารับเลยตอนนี้ลดเหลือ 12000 ถ้วนเลยจ้า",
+    "pattern": "C4",
+    "source_conversation_id": "conv_013",
+    "turn": 8
+  },
+  {
+    "text": "รีบโอนเลยนะ อีก 10 นาทีให้คนอื่นแล้ว",
+    "pattern": "B4",
+    "source_conversation_id": "conv_013",
+    "turn": 12
+  },
+  {
+    "text": "มีค่าธรรมเนียมกดบัตรเพิ่มอีก 800 บาท",
+    "pattern": "B1",
+    "source_conversation_id": "conv_014",
+    "turn": 4
+  },
+  {
+    "text": "รีบโอนนะ ไม่งั้นขายคนอื่นแล้ว",
+    "pattern": "B4",
+    "source_conversation_id": "conv_014",
+    "turn": 12
+  },
+  {
+    "text": "ถ่ายเพิ่มไม่ได้ พอดีแพ็กของลงกล่องพร้อมส่งแล้วครับ",
+    "pattern": "D1",
+    "source_conversation_id": "conv_015",
+    "turn": 4
+  },
+  {
+    "text": "ไม่รับเก็บปลายทางนะคะ",
+    "pattern": "B3",
+    "source_conversation_id": "conv_015",
+    "turn": 8
+  },
+  {
+    "text": "โอนเข้าชื่อ สมชาย แสนสุข แทนนะ",
+    "pattern": "A2",
+    "source_conversation_id": "conv_015",
+    "turn": 10
+  },
+  {
+    "text": "แอดไลน์คุยต่อนะ 0891234567",
+    "pattern": "A3",
+    "source_conversation_id": "conv_016",
+    "turn": 6
+  },
+  {
+    "text": "จะย้ายบ้านพรุ่งนี้แล้ว ต้องรีบขายวันนี้เลย",
+    "pattern": "C3",
+    "source_conversation_id": "conv_016",
+    "turn": 10
+  },
+  {
+    "text": "ถ้าเอาลดให้เหลือ 11000 เลยค่ะ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_016",
+    "turn": 10
+  },
+  {
+    "text": "พอดีอยู่เชียงใหม่ค่ะพี่ สะดวกส่งเป็น EMS",
+    "pattern": "D3",
+    "source_conversation_id": "conv_017",
+    "turn": 4
+  },
+  {
+    "text": "ไม่เอาคนกลางนะ ยุ่งยาก เสียเวลาค่ะ",
+    "pattern": "A1",
+    "source_conversation_id": "conv_017",
+    "turn": 6
+  },
+  {
+    "text": "มีคนรอคิวโอนอยู่ รีบหน่อยนะ",
+    "pattern": "B4",
+    "source_conversation_id": "conv_017",
+    "turn": 10
+  },
+  {
+    "text": "ไม่มีปลายทางครับ โอนก่อนเท่านั้น",
+    "pattern": "B3",
+    "source_conversation_id": "conv_018",
+    "turn": 6
+  },
+  {
+    "text": "ต้องบวกค่าดำเนินการอีก 1500 นะครับ",
+    "pattern": "B1",
+    "source_conversation_id": "conv_018",
+    "turn": 8
+  },
+  {
+    "text": "โอนเข้าชื่อ นายสมพงษ์ แทนนะ",
+    "pattern": "A2",
+    "source_conversation_id": "conv_018",
+    "turn": 12
+  },
+  {
+    "text": "รูปในโพสต์ก็ชัดแล้วครับ ถ่ายเพิ่มไม่ได้",
+    "pattern": "D1",
+    "source_conversation_id": "conv_019",
+    "turn": 4
+  },
+  {
+    "text": "พอดีอยู่ต่างจังหวัดครับ สะดวกส่งขนส่งเอกชนอย่างเดียวเลย",
+    "pattern": "D3",
+    "source_conversation_id": "conv_020",
+    "turn": 4
+  },
+  {
+    "text": "ถ้าโอนเต็มจำนวนวันนี้ลดให้อีก 1000 นะ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_020",
+    "turn": 8
+  },
+  {
+    "text": "แอดไลน์มาคุยต่อนะ",
+    "pattern": "A3",
+    "source_conversation_id": "conv_021",
+    "turn": 4
+  },
+  {
+    "text": "ไม่สะดวกนัดเจอค่ะ พอดีติดงานประจำ ส่งไปรษณีย์อย่างเดียวเลยจ้า",
+    "pattern": "B2",
+    "source_conversation_id": "conv_021",
+    "turn": 6
+  },
+  {
+    "text": "รีบตัดสินใจโอนเลยน้า",
+    "pattern": "B4",
+    "source_conversation_id": "conv_021",
+    "turn": 10
+  },
+  {
+    "text": "โอนเต็มจำนวนตอนนี้ลดให้อีก 100 นะ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_022",
+    "turn": 4
+  },
+  {
+    "text": "โอนเข้าชื่อ สมชาย แทนนะ บัญชีตัวเองมีปัญหาจ้า",
+    "pattern": "A2",
+    "source_conversation_id": "conv_022",
+    "turn": 8
+  },
+  {
+    "text": "แอดไลน์มาเลยครับ id: yeezystore9",
+    "pattern": "A3",
+    "source_conversation_id": "conv_024",
+    "turn": 4
+  },
+  {
+    "text": "ต้องโอนทั้งหมด 3,500 นะครับ",
+    "pattern": "B1",
+    "source_conversation_id": "conv_024",
+    "turn": 8
+  },
+  {
+    "text": "พอดีพี่อยู่เชียงใหม่ค่ะ สะดวกส่งเป็น EMS หรือ Flash Express",
+    "pattern": "D3",
+    "source_conversation_id": "conv_025",
+    "turn": 4
+  },
+  {
+    "text": "ไม่มีปลายทางค่ะ โอนก่อนเท่านั้นจ้า",
+    "pattern": "B3",
+    "source_conversation_id": "conv_026",
+    "turn": 4
+  },
+  {
+    "text": "โอนเข้าชื่อ ณัฐพล แทนนะ บัญชีตัวเองมีปัญหา",
+    "pattern": "A2",
+    "source_conversation_id": "conv_026",
+    "turn": 8
+  },
+  {
+    "text": "ขอเปลี่ยนเงื่อนไขเป็นคิดค่าส่งเพิ่ม 150 บาทนะครับ",
+    "pattern": "C1",
+    "source_conversation_id": "conv_027",
+    "turn": 8
+  },
+  {
+    "text": "รีบโอนเลยนะ มีคนรอคิวโอนอยู่",
+    "pattern": "B4",
+    "source_conversation_id": "conv_028",
+    "turn": 8
+  },
+  {
+    "text": "พอดีอยู่เชียงรายเลยจ้าคนละจังหวัดเลยส่งไปรษณีย์นะคะ",
+    "pattern": "D3",
+    "source_conversation_id": "conv_029",
+    "turn": 4
+  },
+  {
+    "text": "โอนเต็มจำนวนวันนี้ลดให้อีก 100 นะ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_029",
+    "turn": 6
+  },
+  {
+    "text": "โอนเข้าชื่อ อรวรรณ แทนนะ บัญชีตัวเองมีปัญหาจ้า",
+    "pattern": "A2",
+    "source_conversation_id": "conv_029",
+    "turn": 10
+  },
+  {
+    "text": "แอดไลน์คุยต่อนะ 0987654321",
+    "pattern": "A3",
+    "source_conversation_id": "conv_030",
+    "turn": 8
+  },
+  {
+    "text": "รีบโอนเลยนะ อีก 5 นาทีจะออกไปส่งของรอบบ่ายแล้ว",
+    "pattern": "B4",
+    "source_conversation_id": "conv_030",
+    "turn": 10
+  },
+  {
+    "text": "ถ้ารับเลยเหลือ 13000",
+    "pattern": "C4",
+    "source_conversation_id": "conv_031",
+    "turn": 8
+  },
+  {
+    "text": "รีบหน่อยนะ มีคนรอคิวโอนอยู่",
+    "pattern": "B4",
+    "source_conversation_id": "conv_032",
+    "turn": 8
+  },
+  {
+    "text": "โอนเข้าชื่อ นาย สมชาย แทนนะ บัญชีตัวเองมีปัญหา",
+    "pattern": "A2",
+    "source_conversation_id": "conv_033",
+    "turn": 8
+  },
+  {
+    "text": "ต้องบวกค่าดำเนินการอีก 300 นะ",
+    "pattern": "B1",
+    "source_conversation_id": "conv_034",
+    "turn": 8
+  },
+  {
+    "text": "พอดีผมอยู่เชียงใหม่ครับพี่ สะดวกส่งเป็น EMS หรือ Flash Express มากกว่าครับ",
+    "pattern": "D3",
+    "source_conversation_id": "conv_036",
+    "turn": 2
+  },
+  {
+    "text": "ต้องโอนก่อนถึงจะส่งของให้ตรวจได้",
+    "pattern": "A1",
+    "source_conversation_id": "conv_037",
+    "turn": 6
+  },
+  {
+    "text": "โอนเต็มจำนวนวันนี้ลดให้อีก 1000 นะ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_037",
+    "turn": 8
+  },
+  {
+    "text": "รูปลงไว้หมดแล้วจ้า ถ่ายเพิ่มไม่ได้แล้วครับ",
+    "pattern": "D1",
+    "source_conversation_id": "conv_041",
+    "turn": 4
+  },
+  {
+    "text": "ไม่มีปลายทางครับ",
+    "pattern": "B3",
+    "source_conversation_id": "conv_041",
+    "turn": 6
+  },
+  {
+    "text": "รีบตัดสินใจหน่อยนะครับ มีคนทักมาถามอีกสองคิว",
+    "pattern": "B4",
+    "source_conversation_id": "conv_041",
+    "turn": 10
+  },
+  {
+    "text": "พอดีแม่ค้าอยู่เชียงใหม่เจ้า ส่งด่วน ems สะดวกกว่าน้า",
+    "pattern": "D3",
+    "source_conversation_id": "conv_042",
+    "turn": 4
+  },
+  {
+    "text": "โอนเข้าชื่อ สุภาวดี แทนนะ บัญชีตัวเองมีปัญหา",
+    "pattern": "A2",
+    "source_conversation_id": "conv_042",
+    "turn": 8
+  },
+  {
+    "text": "แอดไลน์มาเลยนะ เดี๋ยวลดราคาพิเศษให้ด้วย",
+    "pattern": "C4",
+    "source_conversation_id": "conv_043",
+    "turn": 10
+  },
+  {
+    "text": "ไม่มีเก็บปลายทางนะคะ",
+    "pattern": "B3",
+    "source_conversation_id": "conv_044",
+    "turn": 6
+  },
+  {
+    "text": "ต้องรีบโอนเลยนะ อีก 10 นาทีให้คนอื่นแล้ว",
+    "pattern": "B4",
+    "source_conversation_id": "conv_044",
+    "turn": 8
+  },
+  {
+    "text": "ไม่เอาคนกลางนะ ยุ่งยาก เสียเวลามากเลยค่ะ",
+    "pattern": "A1",
+    "source_conversation_id": "conv_044",
+    "turn": 10
+  },
+  {
+    "text": "โอนเข้าชื่อ นายสมชาย แทนนะ บัญชีตัวเองมีปัญหา",
+    "pattern": "A2",
+    "source_conversation_id": "conv_045",
+    "turn": 8
+  },
+  {
+    "text": "ไม่สะดวกนัดเจอค่ะ ส่งไปรษณีย์อย่างเดียวเลยค่ะ",
+    "pattern": "B2",
+    "source_conversation_id": "conv_046",
+    "turn": 8
+  },
+  {
+    "text": "ลดให้เหลือใบละ 5,000 บาทจ้า",
+    "pattern": "C4",
+    "source_conversation_id": "conv_047",
+    "turn": 4
+  },
+  {
+    "text": "แอดไลน์คุยต่อนะ @ticket_fast",
+    "pattern": "A3",
+    "source_conversation_id": "conv_047",
+    "turn": 8
+  },
+  {
+    "text": "ถ่ายเพิ่มไม่ได้แล้วครับ แพ็คของลงกล่องเตรียมส่งแล้วจ้า",
+    "pattern": "D1",
+    "source_conversation_id": "conv_048",
+    "turn": 10
+  },
+  {
+    "text": "โอนเข้าชื่อบัญชีอื่นแทนนะ บัญชีชื่อตามโปรไฟล์โดนอายัดชั่วคราว",
+    "pattern": "A2",
+    "source_conversation_id": "conv_048",
+    "turn": 12
+  },
+  {
+    "text": "พอดีผมอยู่ยะลาเลยส่งแฟลชให้อย่างเดียว",
+    "pattern": "D3",
+    "source_conversation_id": "conv_049",
+    "turn": 4
+  },
+  {
+    "text": "โอนเต็มจำนวนวันนี้ลดให้อีก 500 นะ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_049",
+    "turn": 10
+  },
+  {
+    "text": "โอนเข้าชื่อ นายวิชัย แทนนะ บัญชีตัวเองมีปัญหา",
+    "pattern": "A2",
+    "source_conversation_id": "conv_049",
+    "turn": 12
+  },
+  {
+    "text": "รูปในโพสต์ลงไว้ครบแล้วจ้า ถ่ายเพิ่มไม่ได้แล้ว",
+    "pattern": "D1",
+    "source_conversation_id": "conv_050",
+    "turn": 4
+  },
+  {
+    "text": "แต่ต้องบวกค่าดำเนินการแพ็คไม้กันกระแทกอีก 2,000 นะ",
+    "pattern": "B1",
+    "source_conversation_id": "conv_050",
+    "turn": 6
+  },
+  {
+    "text": "ไม่เอาคนกลางนะ ยุ่งยากเสียเวลาจ้า",
+    "pattern": "A1",
+    "source_conversation_id": "conv_050",
+    "turn": 10
+  },
+  {
+    "text": "ไม่เอาคนกลางนะคะ ยุ่งยาก",
+    "pattern": "A1",
+    "source_conversation_id": "conv_051",
+    "turn": 8
+  },
+  {
+    "text": "ต้องโอนภายใน 10 นาทีนี้เลยนะ",
+    "pattern": "B4",
+    "source_conversation_id": "conv_051",
+    "turn": 10
+  },
+  {
+    "text": "ถ่ายเพิ่มไม่ได้แล้วจ้า",
+    "pattern": "D1",
+    "source_conversation_id": "conv_052",
+    "turn": 4
+  },
+  {
+    "text": "โอนเต็มจำนวนลดให้พิเศษ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_052",
+    "turn": 10
+  },
+  {
+    "text": "ไม่สะดวกนัดเจอเลยครับ",
+    "pattern": "B2",
+    "source_conversation_id": "conv_053",
+    "turn": 8
+  },
+  {
+    "text": "โอนเข้าชื่อ สุรชัย แทนนะ บัญชีตัวเองมีปัญหา",
+    "pattern": "A2",
+    "source_conversation_id": "conv_053",
+    "turn": 10
+  },
+  {
+    "text": "ต้องบวกค่าดำเนินการและค่าประกันสินค้าอีก 500 นะครับ",
+    "pattern": "B1",
+    "source_conversation_id": "conv_054",
+    "turn": 8
+  },
+  {
+    "text": "รีบโอนเลยนะ อีก 5 นาทีจะปิดยอดส่งรอบเช้าแล้ว",
+    "pattern": "B4",
+    "source_conversation_id": "conv_054",
+    "turn": 10
+  },
+  {
+    "text": "พอดีอยู่เชียงใหม่เจ้า สะดวกส่งด่วนไปรษณีย์ไทย",
+    "pattern": "D3",
+    "source_conversation_id": "conv_055",
+    "turn": 4
+  },
+  {
+    "text": "โอนเต็มจำนวนตอนนี้ ลดพิเศษเหลือ 2,500 บาท",
+    "pattern": "C4",
+    "source_conversation_id": "conv_055",
+    "turn": 10
+  },
+  {
+    "text": "ไม่เอาคนกลางนะ ยุ่งยากมากๆ",
+    "pattern": "A1",
+    "source_conversation_id": "conv_056",
+    "turn": 4
+  },
+  {
+    "text": "ออกมาทำธุระต่างจังหวัดด่วนเลยครับ",
+    "pattern": "D3",
+    "source_conversation_id": "conv_056",
+    "turn": 6
+  },
+  {
+    "text": "ต้องรีบใช้เงินไปจ่ายค่ารักษาพยาบาลแม่เย็นนี้เลยครับ",
+    "pattern": "C3",
+    "source_conversation_id": "conv_056",
+    "turn": 10
+  },
+  {
+    "text": "ไม่สะดวกนัดเจอค่ะ ส่งไปรษณีย์อย่างเดียวเลย",
+    "pattern": "B2",
+    "source_conversation_id": "conv_057",
+    "turn": 4
+  },
+  {
+    "text": "โอนเข้าชื่อ สมศรี แทนนะ บัญชีตัวเองมีปัญหา",
+    "pattern": "A2",
+    "source_conversation_id": "conv_057",
+    "turn": 8
+  },
+  {
+    "text": "รีบโอนหน่อยน้า มีคนรอคิวโอนต่ออีกเยอะเลยจ้า",
+    "pattern": "B4",
+    "source_conversation_id": "conv_057",
+    "turn": 12
+  },
+  {
+    "text": "ส่งรูปเพิ่มเติมไม่ได้แล้วจ้า",
+    "pattern": "D1",
+    "source_conversation_id": "conv_058",
+    "turn": 8
+  },
+  {
+    "text": "แอดไลน์คุยต่อนะ",
+    "pattern": "A3",
+    "source_conversation_id": "conv_058",
+    "turn": 10
+  },
+  {
+    "text": "ไม่รับคนกลางนะ ยุ่งยากมากครับ",
+    "pattern": "A1",
+    "source_conversation_id": "conv_059",
+    "turn": 6
+  },
+  {
+    "text": "ขอเก็บค่าส่งแยกนะ ค่าส่ง EMS 200 บาท",
+    "pattern": "C1",
+    "source_conversation_id": "conv_059",
+    "turn": 8
+  },
+  {
+    "text": "รีบโอนหน่อยน้า เดี๋ยวหมดรอบส่งวันนี้",
+    "pattern": "B4",
+    "source_conversation_id": "conv_059",
+    "turn": 10
+  },
+  {
+    "text": "ไม่มีปลายทางนะคะ",
+    "pattern": "B3",
+    "source_conversation_id": "conv_060",
+    "turn": 4
+  },
+  {
+    "text": "รูปใบรับประกันส่งให้ดูไม่ได้แล้วค่ะ",
+    "pattern": "D1",
+    "source_conversation_id": "conv_060",
+    "turn": 8
+  },
+  {
+    "text": "โอนเข้าชื่อ นายธวัชชัย แทนนะ บัญชีส่วนตัวแม่ค้าโดนจำกัดวงเงิน",
+    "pattern": "A2",
+    "source_conversation_id": "conv_060",
+    "turn": 10
+  },
+  {
+    "text": "ถ้ารีบโอนตอนนี้ ลดให้พิเศษเหลือ 27,000",
+    "pattern": "C4",
+    "source_conversation_id": "conv_060",
+    "turn": 12
+  },
+  {
+    "text": "ไม่สะดวกนัดเจอเลยค่ะ",
+    "pattern": "B2",
+    "source_conversation_id": "conv_061",
+    "turn": 4
+  },
+  {
+    "text": "ทักมาคุยทางไลน์ดีกว่า แอดไลน์มานะ",
+    "pattern": "A3",
+    "source_conversation_id": "conv_061",
+    "turn": 8
+  },
+  {
+    "text": "เดี๋ยวของหมดก่อนนะเตง",
+    "pattern": "B4",
+    "source_conversation_id": "conv_061",
+    "turn": 12
+  },
+  {
+    "text": "โอนวันนี้ลดให้อีก 200 นะ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_062",
+    "turn": 4
+  },
+  {
+    "text": "โอนเข้าชื่อ สุภาวดี แทนนะ",
+    "pattern": "A2",
+    "source_conversation_id": "conv_062",
+    "turn": 8
+  },
+  {
+    "text": "ทักไลน์มาคุยต่อนะ",
+    "pattern": "A3",
+    "source_conversation_id": "conv_063",
+    "turn": 8
+  },
+  {
+    "text": "ต้องบวกค่าดำเนินการเพิ่มอีก 300 นะ",
+    "pattern": "B1",
+    "source_conversation_id": "conv_064",
+    "turn": 6
+  },
+  {
+    "text": "โอนเข้าชื่อ สมชาย แทนนะ",
+    "pattern": "A2",
+    "source_conversation_id": "conv_064",
+    "turn": 10
+  },
+  {
+    "text": "ไม่สะดวกนัดเจอค่ะ",
+    "pattern": "B2",
+    "source_conversation_id": "conv_065",
+    "turn": 4
+  },
+  {
+    "text": "ไม่รับคนกลางนะ ยุ่งยาก",
+    "pattern": "A1",
+    "source_conversation_id": "conv_066",
+    "turn": 6
+  },
+  {
+    "text": "ถ้ารับเลยเหลือ 4000 ครับ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_066",
+    "turn": 8
+  },
+  {
+    "text": "รีบหน่อยนะไม่งั้นให้คนอื่น",
+    "pattern": "B4",
+    "source_conversation_id": "conv_066",
+    "turn": 10
+  },
+  {
+    "text": "เรียนลูกค้าผู้มีอุปการคุณ",
+    "pattern": "D2",
+    "source_conversation_id": "conv_067",
+    "turn": 2
+  },
+  {
+    "text": "สามารถโอนเข้าชื่อ สมพร แทนนะ",
+    "pattern": "A2",
+    "source_conversation_id": "conv_067",
+    "turn": 8
+  },
+  {
+    "text": "สนใจแอดไลน์มาคุยต่อนะ",
+    "pattern": "A3",
+    "source_conversation_id": "conv_068",
+    "turn": 4
+  },
+  {
+    "text": "ต้องบวกค่าดำเนินการอีก 500 นะครับ",
+    "pattern": "B1",
+    "source_conversation_id": "conv_068",
+    "turn": 8
+  },
+  {
+    "text": "โอนเข้าชื่อ วรวุฒิ แทนนะ",
+    "pattern": "A2",
+    "source_conversation_id": "conv_070",
+    "turn": 10
+  },
+  {
+    "text": "ไม่สะดวกถ่ายเพิ่มเลยค่ะ",
+    "pattern": "D1",
+    "source_conversation_id": "conv_071",
+    "turn": 6
+  },
+  {
+    "text": "แอดไลน์มาคุยกันต่อดีกว่าค่ะ",
+    "pattern": "A3",
+    "source_conversation_id": "conv_071",
+    "turn": 10
+  },
+  {
+    "text": "ถ้ารับตอนนี้ลดให้เหลือ 4000 ถ้วนเลย",
+    "pattern": "C4",
+    "source_conversation_id": "conv_072",
+    "turn": 4
+  },
+  {
+    "text": "ไม่เอาคนกลางนะ",
+    "pattern": "A1",
+    "source_conversation_id": "conv_072",
+    "turn": 6
+  },
+  {
+    "text": "รูปส่งให้ดูไม่ได้แล้วค่ะ",
+    "pattern": "D1",
+    "source_conversation_id": "conv_072",
+    "turn": 10
+  },
+  {
+    "text": "มีคนรอคิวโอนอยู่อีกหลายคนเลย",
+    "pattern": "B4",
+    "source_conversation_id": "conv_072",
+    "turn": 12
+  },
+  {
+    "text": "ถ่ายเพิ่มไม่ได้แล้วเก็บลงกล่องหมดแล้ว",
+    "pattern": "D1",
+    "source_conversation_id": "conv_073",
+    "turn": 6
+  },
+  {
+    "text": "โอนเข้าชื่อ สุชาติ แทนนะ",
+    "pattern": "A2",
+    "source_conversation_id": "conv_073",
+    "turn": 8
+  },
+  {
+    "text": "ถ่ายเพิ่มไม่ได้แล้วน้า",
+    "pattern": "D1",
+    "source_conversation_id": "conv_074",
+    "turn": 8
+  },
+  {
+    "text": "ไม่มีปลายทางน้า",
+    "pattern": "B3",
+    "source_conversation_id": "conv_074",
+    "turn": 10
+  },
+  {
+    "text": "แอดไลน์มาคุยต้อนะคะ",
+    "pattern": "A3",
+    "source_conversation_id": "conv_074",
+    "turn": 12
+  },
+  {
+    "text": "ลดให้อีก 500 เหลือ 7000 ถ้วนไปเลยจ้า",
+    "pattern": "C4",
+    "source_conversation_id": "conv_075",
+    "turn": 4
+  },
+  {
+    "text": "ถ่ายให้ดูไม่ได้",
+    "pattern": "D1",
+    "source_conversation_id": "conv_075",
+    "turn": 8
+  },
+  {
+    "text": "พอดีพี่อยู่เชียงใหม่ค่ะ",
+    "pattern": "D3",
+    "source_conversation_id": "conv_075",
+    "turn": 10
+  },
+  {
+    "text": "โอนเข้าชื่อ สมศรี น้า",
+    "pattern": "A2",
+    "source_conversation_id": "conv_075",
+    "turn": 12
+  },
+  {
+    "text": "ไม่สะดวกผ่านคนกลางครับ",
+    "pattern": "A1",
+    "source_conversation_id": "conv_076",
+    "turn": 6
+  },
+  {
+    "text": "ภายใน 10 นาทีนี้",
+    "pattern": "B4",
+    "source_conversation_id": "conv_076",
+    "turn": 8
+  },
+  {
+    "text": "ลดให้เหลือ 4500 เลยครับ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_076",
+    "turn": 8
+  },
+  {
+    "text": "ถ่ายเพิ่มไม่ได้แล้วค่ะ",
+    "pattern": "D1",
+    "source_conversation_id": "conv_077",
+    "turn": 8
+  },
+  {
+    "text": "โอนเข้าชื่อ นาย นนทวัช แทนนะ",
+    "pattern": "A2",
+    "source_conversation_id": "conv_077",
+    "turn": 12
+  },
+  {
+    "text": "ทักมาทาง Line จะได้คุยง่ายกว่านะคะ",
+    "pattern": "A3",
+    "source_conversation_id": "conv_078",
+    "turn": 12
+  },
+  {
+    "text": "ลดให้เหลือ 7000 ถ้วนครับ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_079",
+    "turn": 4
+  },
+  {
+    "text": "ไม่สะดวกนัดเจอครับ",
+    "pattern": "B2",
+    "source_conversation_id": "conv_079",
+    "turn": 6
+  },
+  {
+    "text": "ไม่รับเก็บปลายทางครับ",
+    "pattern": "B3",
+    "source_conversation_id": "conv_079",
+    "turn": 8
+  },
+  {
+    "text": "โอนเข้าชื่อ ประสิทธิ์ แทนนะ",
+    "pattern": "A2",
+    "source_conversation_id": "conv_080",
+    "turn": 8
+  },
+  {
+    "text": "ไม่มีปลายทางด้วยครับ โอนก่อนเท่านั้น",
+    "pattern": "B3",
+    "source_conversation_id": "conv_081",
+    "turn": 8
+  },
+  {
+    "text": "โอนเข้าชื่อ สมชาย แทนนะ บัญชีตัวเองมีปัญหา",
+    "pattern": "A2",
+    "source_conversation_id": "conv_081",
+    "turn": 12
+  },
+  {
+    "text": "ถ่ายเพิ่มไม่ได้แล้วครับ พอดีแพ็คของลงกล่องเรียบร้อยแล้วจ้า",
+    "pattern": "D1",
+    "source_conversation_id": "conv_082",
+    "turn": 4
+  },
+  {
+    "text": "ไม่สะดวกนัดรับเลยค่า พอดีงานยุ่งมาก ส่งแฟลชอย่างเดียวน้า",
+    "pattern": "B2",
+    "source_conversation_id": "conv_082",
+    "turn": 6
+  },
+  {
+    "text": "ขอไม่ผ่านคนกลางนะคะ เสียเวลาขั้นตอนเยอะมาก",
+    "pattern": "A1",
+    "source_conversation_id": "conv_082",
+    "turn": 8
+  },
+  {
+    "text": "ไม่มีปลายทางครับ โอนก่อนเท่านั้นน้า",
+    "pattern": "B3",
+    "source_conversation_id": "conv_082",
+    "turn": 10
+  },
+  {
+    "text": "ตอนนี้ 9500 ถ้ารับเลยเหลือ 8000 ครับ โอนเลยลดให้พิเศษ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_082",
+    "turn": 12
+  },
+  {
+    "text": "โอนเข้าชื่อ สมศักดิ์ แทนนะ บัญชีตัวเองมีปัญหา",
+    "pattern": "A2",
+    "source_conversation_id": "conv_082",
+    "turn": 14
+  },
+  {
+    "text": "พอดีแม่เข้าโรงพยาบาลกระทันหัน ต้องรีบใช้เงินวันนี้เลย",
+    "pattern": "C3",
+    "source_conversation_id": "conv_083",
+    "turn": 8
+  },
+  {
+    "text": "โอนเข้าชื่อ วรวุฒิ แทนนะ บัญชีตัวเองมีปัญหา",
+    "pattern": "A2",
+    "source_conversation_id": "conv_083",
+    "turn": 12
+  },
+  {
+    "text": "ไม่รับเก็บปลายทางนะคะ โอนก่อนส่งเท่านั้น",
+    "pattern": "B3",
+    "source_conversation_id": "conv_084",
+    "turn": 8
+  },
+  {
+    "text": "แอดไลน์มาเลย",
+    "pattern": "A3",
+    "source_conversation_id": "conv_085",
+    "turn": 6
+  },
+  {
+    "text": "มีค่าส่งประกันสินค้าเพิ่มอีก 250 นะคะ",
+    "pattern": "C1",
+    "source_conversation_id": "conv_087",
+    "turn": 8
+  },
+  {
+    "text": "โอนเข้าชื่อ สิทธิชัย แทนนะ บัญชีตัวเองมีปัญหาจ้า",
+    "pattern": "A2",
+    "source_conversation_id": "conv_087",
+    "turn": 12
+  },
+  {
+    "text": "โอนยอดเต็มลดให้พิเศษ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_088",
+    "turn": 10
+  },
+  {
+    "text": "โอนเข้าชื่อ ประเสริฐ แทนนะ บัญชีตัวเองมีปัญหา",
+    "pattern": "A2",
+    "source_conversation_id": "conv_088",
+    "turn": 12
+  },
+  {
+    "text": "ไม่สะดวกนัดเจอครับ ส่งแฟลชอย่างเดียว",
+    "pattern": "B2",
+    "source_conversation_id": "conv_089",
+    "turn": 4
+  },
+  {
+    "text": "โอนเข้าชื่อ มานี แทนนะ บัญชีตัวเองมีปัญหา",
+    "pattern": "A2",
+    "source_conversation_id": "conv_090",
+    "turn": 12
+  },
+  {
+    "text": "ไม่มีเก็บปลายทางเลยค่ะ",
+    "pattern": "B3",
+    "source_conversation_id": "conv_091",
+    "turn": 8
+  },
+  {
+    "text": "ถ้าโอนตอนนี้เลยลดให้ 500",
+    "pattern": "C4",
+    "source_conversation_id": "conv_091",
+    "turn": 10
+  },
+  {
+    "text": "ต้องโอนภายใน 10 นาทีนี้นะคะ",
+    "pattern": "B4",
+    "source_conversation_id": "conv_091",
+    "turn": 10
+  },
+  {
+    "text": "ถ่ายเพิ่มไม่ได้แล้วเนี่ย",
+    "pattern": "D1",
+    "source_conversation_id": "conv_092",
+    "turn": 10
+  },
+  {
+    "text": "ย้ายบ้านพรุ่งนี้แล้ว ต้องรีบขายวันนี้เลย",
+    "pattern": "C3",
+    "source_conversation_id": "conv_093",
+    "turn": 4
+  },
+  {
+    "text": "โอนเข้าชื่อ สุรเดช แทนนะ บัญชีตัวเองมีปัญหา",
+    "pattern": "A2",
+    "source_conversation_id": "conv_093",
+    "turn": 10
+  },
+  {
+    "text": "ถ่ายเพิ่มไม่ได้ พอดีแพ็คกล่องเรียบร้อยพร้อมส่งแล้วจ้า",
+    "pattern": "D1",
+    "source_conversation_id": "conv_094",
+    "turn": 8
+  },
+  {
+    "text": "โอนเต็มจำนวนวันนี้ลดให้อีก 1000 เลยครับ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_095",
+    "turn": 8
+  },
+  {
+    "text": "รูปที่ลงในโพสต์ก็ชัดครบทุกมุมแล้วนะครับ",
+    "pattern": "D1",
+    "source_conversation_id": "conv_095",
+    "turn": 10
+  },
+  {
+    "text": "รีบหน่อยน้า ราคานี้มีคนทักมาถามเยอะมากครับ",
+    "pattern": "B4",
+    "source_conversation_id": "conv_095",
+    "turn": 12
+  },
+  {
+    "text": "ทักไลน์มาคุยจะส่งรูปง่ายกว่านะ",
+    "pattern": "A3",
+    "source_conversation_id": "conv_096",
+    "turn": 4
+  },
+  {
+    "text": "โอนเข้าชื่อ สมจิตร แทนนะ บัญชีตัวเองมีปัญหา",
+    "pattern": "A2",
+    "source_conversation_id": "conv_096",
+    "turn": 8
+  },
+  {
+    "text": "ต้องบวกเพิ่มค่าดำเนินการอีก 300 นะ",
+    "pattern": "B1",
+    "source_conversation_id": "conv_097",
+    "turn": 6
+  },
+  {
+    "text": "ไม่สะดวกนัดเจอค่ะ ส่งไปรษณีย์อย่างเดียวเลย พอดีอยู่ต่างอำเภอค่ะ",
+    "pattern": "D3",
+    "source_conversation_id": "conv_098",
+    "turn": 4
+  },
+  {
+    "text": "ต้องโอนเข้าชื่อ สมปอง แทนนะ บัญชีตัวเองมีปัญหา",
+    "pattern": "A2",
+    "source_conversation_id": "conv_098",
+    "turn": 6
+  },
+  {
+    "text": "ไม่สะดวกนัดเจอครับ ส่งไปรษณีย์อย่างเดียวเลย",
+    "pattern": "B2",
+    "source_conversation_id": "conv_099",
+    "turn": 6
+  },
+  {
+    "text": "ถ้ารับเลยเหลือ 18000",
+    "pattern": "C4",
+    "source_conversation_id": "conv_099",
+    "turn": 10
+  },
+  {
+    "text": "ต้องโอนภายใน 15 นาทีนี้เลยนะ",
+    "pattern": "B4",
+    "source_conversation_id": "conv_099",
+    "turn": 10
+  },
+  {
+    "text": "ถ่ายเพิ่มไม่ได้แล้วครับ",
+    "pattern": "D1",
+    "source_conversation_id": "conv_100",
+    "turn": 10
+  },
+  {
+    "text": "มีคนทักมาจะโอนเต็มหลายคนแล้วครับ",
+    "pattern": "B4",
+    "source_conversation_id": "conv_100",
+    "turn": 12
+  },
+  {
+    "text": "ทักแอดไลน์คุยต่อนะ",
+    "pattern": "A3",
+    "source_conversation_id": "conv_101",
+    "turn": 2
+  },
+  {
+    "text": "พอดีผมอยู่เชียงรายครับพี่ สะดวกส่งเป็น EMS",
+    "pattern": "D3",
+    "source_conversation_id": "conv_102",
+    "turn": 6
+  },
+  {
+    "text": "ถ่ายเพิ่มไม่ได้",
+    "pattern": "D1",
+    "source_conversation_id": "conv_102",
+    "turn": 8
+  },
+  {
+    "text": "โอนเข้าชื่อ สุชาติ แทนนะ บัญชีตัวเองมีปัญหา",
+    "pattern": "A2",
+    "source_conversation_id": "conv_102",
+    "turn": 10
+  },
+  {
+    "text": "โอนเต็มจำนวนวันนี้ลดให้อีก 500",
+    "pattern": "C4",
+    "source_conversation_id": "conv_102",
+    "turn": 13
+  },
+  {
+    "text": "แอดไลน์มาคุยได้นะ",
+    "pattern": "A3",
+    "source_conversation_id": "conv_103",
+    "turn": 2
+  },
+  {
+    "text": "พอดีจะย้ายบ้านพรุ่งนี้แล้ว ต้องรีบขายวันนี้เลย",
+    "pattern": "C3",
+    "source_conversation_id": "conv_103",
+    "turn": 10
+  },
+  {
+    "text": "โอนตอนนี้ลดให้เหลือ 10000",
+    "pattern": "C4",
+    "source_conversation_id": "conv_103",
+    "turn": 12
+  },
+  {
+    "text": "โอนเข้าชื่อ สมศรี แซ่ตั้ง แทนนะ บัญชีตัวเองมีปัญหาจ้า",
+    "pattern": "A2",
+    "source_conversation_id": "conv_104",
+    "turn": 8
+  },
+  {
+    "text": "ต้องบวกค่าดำเนินการเปลี่ยนชื่อบนบัตรอีก 500 นะคะ",
+    "pattern": "B1",
+    "source_conversation_id": "conv_104",
+    "turn": 12
+  },
+  {
+    "text": "แอดไลน์มาคุยสะดวกกว่าน้า",
+    "pattern": "A3",
+    "source_conversation_id": "conv_105",
+    "turn": 2
+  },
+  {
+    "text": "โอนเต็มจำนวนลดให้อีกเยอะเลยนะ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_105",
+    "turn": 12
+  },
+  {
+    "text": "ต้องมีค่าโฟมกันกระแทกเพิ่มอีก 200",
+    "pattern": "C1",
+    "source_conversation_id": "conv_106",
+    "turn": 10
+  },
+  {
+    "text": "รีบโอนเลยนะ อีก 5 นาทีให้คนอื่นแล้ว",
+    "pattern": "B4",
+    "source_conversation_id": "conv_106",
+    "turn": 12
+  },
+  {
+    "text": "พอดีผมอยู่เชียงใหม่ครับพี่ สะดวกส่งเป็น EMS",
+    "pattern": "D3",
+    "source_conversation_id": "conv_107",
+    "turn": 4
+  },
+  {
+    "text": "โอนเข้าชื่อ สมชาย แซ่เตียว แทนนะ บัญชีตัวเองมีปัญหา",
+    "pattern": "A2",
+    "source_conversation_id": "conv_107",
+    "turn": 10
+  },
+  {
+    "text": "โอนเต็มจำนวนวันนี้ลดให้อีก 300",
+    "pattern": "C4",
+    "source_conversation_id": "conv_107",
+    "turn": 13
+  },
+  {
+    "text": "ต้องบวกค่าประกันไอดีโดนเกรียนเพิ่มอีก 300 นะ",
+    "pattern": "B1",
+    "source_conversation_id": "conv_108",
+    "turn": 8
+  },
+  {
+    "text": "ถ้าน้องไม่รีบโอนอีก 300 ภายใน 5 นาทีนี้",
+    "pattern": "B4",
+    "source_conversation_id": "conv_108",
+    "turn": 12
+  },
+  {
+    "text": "ถ้ารับเลยเหลือ 1500 ค่ะ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_109",
+    "turn": 11
+  },
+  {
+    "text": "โอนเข้าชื่อ สมชาย แซ่ลิ้ม แทนนะ บัญชีตัวเองมีปัญหา",
+    "pattern": "A2",
+    "source_conversation_id": "conv_110",
+    "turn": 10
+  },
+  {
+    "text": "รบกวนแอดไลน์คุยต่อนะ @999lucky",
+    "pattern": "A3",
+    "source_conversation_id": "conv_111",
+    "turn": 4
+  },
+  {
+    "text": "ไม่มีปลายทางน้า โอนก่อนอย่างเดียวเลยค่า",
+    "pattern": "B3",
+    "source_conversation_id": "conv_111",
+    "turn": 6
+  },
+  {
+    "text": "พอดีติดธุระต่างจังหวัดยาวเลย สะดวกส่งแฟลชให้อย่างเดียวค่ะ",
+    "pattern": "D3",
+    "source_conversation_id": "conv_111",
+    "turn": 8
+  },
+  {
+    "text": "รีบโอนหน่อยน้าคะพอดีมีอีกคิวจ่ออยู่จ้า ถ้าไม่โอนใน 5 นาทีขอผ่าน",
+    "pattern": "B4",
+    "source_conversation_id": "conv_111",
+    "turn": 10
+  },
+  {
+    "text": "โอนเต็มจำนวนวันนี้ลดให้อีก 1000 นะคะ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_112",
+    "turn": 8
+  },
+  {
+    "text": "รูปในโพสต์ก็ชัดแล้วค่ะ ถ่ายเพิ่มไม่ได้แล้ว",
+    "pattern": "D1",
+    "source_conversation_id": "conv_112",
+    "turn": 10
+  },
+  {
+    "text": "จะย้ายบ้านพรุ่งนี้แล้ว ต้องรีบขายวันนี้เลยค่ะ",
+    "pattern": "C3",
+    "source_conversation_id": "conv_113",
+    "turn": 8
+  },
+  {
+    "text": "ทักมาทาง Line จะได้คุยง่ายกว่า แอดไลน์ @coachth",
+    "pattern": "A3",
+    "source_conversation_id": "conv_114",
+    "turn": 2
+  },
+  {
+    "text": "ต้องบวกค่าดำเนินการอีก 300 นะคะ",
+    "pattern": "B1",
+    "source_conversation_id": "conv_114",
+    "turn": 8
+  },
+  {
+    "text": "พอดีผมอยู่เชียงใหม่ครับพี่ สะดวกส่งเป็น EMS หรือ Flash",
+    "pattern": "D3",
+    "source_conversation_id": "conv_115",
+    "turn": 4
+  },
+  {
+    "text": "ถ้าพี่พร้อมโอนเลยผมลดให้อีก 200",
+    "pattern": "C4",
+    "source_conversation_id": "conv_115",
+    "turn": 8
+  },
+  {
+    "text": "สนใจแอดไลน์คุยต่อนะ @ticketfast",
+    "pattern": "A3",
+    "source_conversation_id": "conv_117",
+    "turn": 2
+  },
+  {
+    "text": "ตอนนี้ขอเก็บค่าส่งเปลี่ยนชื่อบัตรเพิ่มอีก 500 นะคะ",
+    "pattern": "C1",
+    "source_conversation_id": "conv_117",
+    "turn": 6
+  },
+  {
+    "text": "ไม่มีปลายทางจ้า โอนก่อนเท่านั้น",
+    "pattern": "B3",
+    "source_conversation_id": "conv_118",
+    "turn": 4
+  },
+  {
+    "text": "โอนเต็มจำนวนวันนี้ลดให้อีก 500 นะคะ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_118",
+    "turn": 10
+  },
+  {
+    "text": "พอดีอยู่เชียงใหม่ครับพี่ สะดวกส่งเป็น EMS หรือ Flash",
+    "pattern": "D3",
+    "source_conversation_id": "conv_119",
+    "turn": 8
+  },
+  {
+    "text": "ต้องบวกค่าส่งด่วนพิเศษกับค่าประกันเครื่องอีก 800",
+    "pattern": "B1",
+    "source_conversation_id": "conv_120",
+    "turn": 8
+  },
+  {
+    "text": "รีบโอนเลยนะ อีก 5 นาทีจะไปส่งของรอบบ่ายแล้ว",
+    "pattern": "B4",
+    "source_conversation_id": "conv_120",
+    "turn": 12
+  },
+  {
+    "text": "แอดไลน์มาคุยหน่อยสิคะ",
+    "pattern": "A3",
+    "source_conversation_id": "conv_121",
+    "turn": 4
+  },
+  {
+    "text": "รีบตัดสินใจน้าเตง มีคนทักมาถามอีกสองคิว",
+    "pattern": "B4",
+    "source_conversation_id": "conv_121",
+    "turn": 10
+  },
+  {
+    "text": "ถ้ารับเลยโอนตอนนี้ลดให้อีก 500",
+    "pattern": "C4",
+    "source_conversation_id": "conv_122",
+    "turn": 10
+  },
+  {
+    "text": "โอนเข้าชื่อ สมนึก บุญมี แทนนะ",
+    "pattern": "A2",
+    "source_conversation_id": "conv_123",
+    "turn": 10
+  },
+  {
+    "text": "ทักไลน์มาคุยนะ",
+    "pattern": "A3",
+    "source_conversation_id": "conv_124",
+    "turn": 2
+  },
+  {
+    "text": "ไม่เอาคนกลางค่ะ ยุ่งยากเสียเวลา",
+    "pattern": "A1",
+    "source_conversation_id": "conv_124",
+    "turn": 12
+  },
+  {
+    "text": "ไม่มีเก็บปลายทางครับ",
+    "pattern": "B3",
+    "source_conversation_id": "conv_125",
+    "turn": 6
+  },
+  {
+    "text": "โอนเข้าชื่อ สมชาย รักดี แทนนะ",
+    "pattern": "A2",
+    "source_conversation_id": "conv_125",
+    "turn": 10
+  },
+  {
+    "text": "สนใจทักมาทาง Line จะได้คุยง่ายกว่านะ",
+    "pattern": "A3",
+    "source_conversation_id": "conv_126",
+    "turn": 4
+  },
+  {
+    "text": "ถ้ารับเลยเหลือ 3200 จ้า โอนตอนนี้เลย",
+    "pattern": "C4",
+    "source_conversation_id": "conv_126",
+    "turn": 8
+  },
+  {
+    "text": "โอนเข้าชื่อ วรรณภา มีสุข แทนนะ",
+    "pattern": "A2",
+    "source_conversation_id": "conv_126",
+    "turn": 10
+  },
+  {
+    "text": "ไม่รับเก็บปลายทางนะครับ",
+    "pattern": "B3",
+    "source_conversation_id": "conv_128",
+    "turn": 6
+  },
+  {
+    "text": "โอนเข้าชื่อ ประสิทธิ์ ใจดี แทนนะ",
+    "pattern": "A2",
+    "source_conversation_id": "conv_128",
+    "turn": 10
+  },
+  {
+    "text": "สนใจแอดไลน์มาคุยนะ",
+    "pattern": "A3",
+    "source_conversation_id": "conv_129",
+    "turn": 2
+  },
+  {
+    "text": "รูปในโพสต์ก็ชัดแล้วค่ะ ถ่ายเพิ่มไม่ได้",
+    "pattern": "D1",
+    "source_conversation_id": "conv_129",
+    "turn": 6
+  },
+  {
+    "text": "ถ้ารับเลยโอนตอนนี้ลดให้อีก 2000",
+    "pattern": "C4",
+    "source_conversation_id": "conv_129",
+    "turn": 12
+  },
+  {
+    "text": "ในรูปที่ลงก็ชัดแล้วนะ",
+    "pattern": "D1",
+    "source_conversation_id": "conv_131",
+    "turn": 4
+  },
+  {
+    "text": "ถ้ารับเลยเหลือ 13000 ครับ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_131",
+    "turn": 10
+  },
+  {
+    "text": "รีบหน่อยนะ",
+    "pattern": "B4",
+    "source_conversation_id": "conv_131",
+    "turn": 11
+  },
+  {
+    "text": "โอนเข้าชื่อ สมนึก แทนนะ บัญชีตัวเองมีปัญหา",
+    "pattern": "A2",
+    "source_conversation_id": "conv_131",
+    "turn": 13
+  },
+  {
+    "text": "พอดีอยู่เชียงใหม่ค่ะ สะดวกส่งเป็น EMS หรือ Flash Express มากกว่าค่ะ",
+    "pattern": "D3",
+    "source_conversation_id": "conv_132",
+    "turn": 8
+  },
+  {
+    "text": "ลดให้เหลือ 6000 ถ้ารับตอนนี้",
+    "pattern": "C4",
+    "source_conversation_id": "conv_132",
+    "turn": 10
+  },
+  {
+    "text": "ต้องบวกค่าดำเนินการอีก 500 นะคะ",
+    "pattern": "B1",
+    "source_conversation_id": "conv_132",
+    "turn": 12
+  },
+  {
+    "text": "โอนเข้าชื่อ นายดำรง แทนนะ บัญชีตัวเองมีปัญหา",
+    "pattern": "A2",
+    "source_conversation_id": "conv_133",
+    "turn": 10
+  },
+  {
+    "text": "ลืมแจ้งว่ามีค่าประกันสินค้าเพิ่มอีก 300 นะคะ",
+    "pattern": "C1",
+    "source_conversation_id": "conv_134",
+    "turn": 10
+  },
+  {
+    "text": "เรียนลูกค้าผู้มีอุปการคุณ ทางร้านขอเรียนแจ้งว่า",
+    "pattern": "D2",
+    "source_conversation_id": "conv_135",
+    "turn": 2
+  },
+  {
+    "text": "โอนเต็มจำนวนวันนี้ลดให้อีก 100 นะคะ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_135",
+    "turn": 10
+  },
+  {
+    "text": "ไม่รับปลายทางครับ โอนก่อนเท่านั้น",
+    "pattern": "B3",
+    "source_conversation_id": "conv_136",
+    "turn": 8
+  },
+  {
+    "text": "ต้องบวกค่าดำเนินการอีก 500 นะ",
+    "pattern": "B1",
+    "source_conversation_id": "conv_136",
+    "turn": 10
+  },
+  {
+    "text": "พอดีอยู่ยะลาเลยค่ะ สะดวกส่งเป็น EMS หรือ Flash Express มากกว่าค่ะ",
+    "pattern": "D3",
+    "source_conversation_id": "conv_137",
+    "turn": 4
+  },
+  {
+    "text": "ถ่ายเพิ่มไม่ได้จริงๆ",
+    "pattern": "D1",
+    "source_conversation_id": "conv_138",
+    "turn": 10
+  },
+  {
+    "text": "โอนเต็มจำนวนวันนี้ลดให้อีกนะคะ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_138",
+    "turn": 12
+  },
+  {
+    "text": "ลดให้เหลือ 4,000 ถ้ารับตอนนี้เลยจ้า",
+    "pattern": "C4",
+    "source_conversation_id": "conv_139",
+    "turn": 4
+  },
+  {
+    "text": "มีค่าธรรมเนียมการโอนสิทธิ์บัตรอีก 500 บาทที่ต้องจ่ายระบบด้วย",
+    "pattern": "C1",
+    "source_conversation_id": "conv_139",
+    "turn": 10
+  },
+  {
+    "text": "ไม่สะดวกนัดเจอครับ ส่งไปรษณีย์อย่างเดียว",
+    "pattern": "B2",
+    "source_conversation_id": "conv_140",
+    "turn": 6
+  },
+  {
+    "text": "รีบโอนเลยนะ มีคนต่อคิวอยู่",
+    "pattern": "B4",
+    "source_conversation_id": "conv_140",
+    "turn": 12
+  },
+  {
+    "text": "เก็บเงินปลายทางไม่มีนะคะ",
+    "pattern": "B3",
+    "source_conversation_id": "conv_141",
+    "turn": 4
+  },
+  {
+    "text": "นัดรับไม่สะดวกเลยจ้า",
+    "pattern": "B2",
+    "source_conversation_id": "conv_141",
+    "turn": 6
+  },
+  {
+    "text": "แอดไลน์มาคุยต่อนะคะ",
+    "pattern": "A3",
+    "source_conversation_id": "conv_141",
+    "turn": 8
+  },
+  {
+    "text": "รีบโอนก่อนเที่ยงนี้นะคะ",
+    "pattern": "B4",
+    "source_conversation_id": "conv_141",
+    "turn": 10
+  },
+  {
+    "text": "ไม่มีปลายทางครับผม",
+    "pattern": "B3",
+    "source_conversation_id": "conv_142",
+    "turn": 6
+  },
+  {
+    "text": "โอนเต็มจำนวนตอนนี้ลดให้อีก 300 คับ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_142",
+    "turn": 8
+  },
+  {
+    "text": "โอนเข้าชื่อ สุรเดช โพธิ์ศรี แทนนะ",
+    "pattern": "A2",
+    "source_conversation_id": "conv_142",
+    "turn": 10
+  },
+  {
+    "text": "โอนเข้าบัญชี วรรณภา ดีใจ นะคะ",
+    "pattern": "A2",
+    "source_conversation_id": "conv_144",
+    "turn": 8
+  },
+  {
+    "text": "รีบโอนเลยนะ อีก 10 นาทีให้คนอื่นแล้วค่ะ",
+    "pattern": "B4",
+    "source_conversation_id": "conv_144",
+    "turn": 10
+  },
+  {
+    "text": "ต้องบวกค่าดำเนินการอีก 1500 นะ",
+    "pattern": "B1",
+    "source_conversation_id": "conv_145",
+    "turn": 8
+  },
+  {
+    "text": "โอนเข้าชื่อ สุนิสา เพียรดี นะคะ",
+    "pattern": "A2",
+    "source_conversation_id": "conv_147",
+    "turn": 10
+  },
+  {
+    "text": "ตอนนี้ต้องคิดค่าส่งด่วนเพิ่ม 300 บาทนะ",
+    "pattern": "C1",
+    "source_conversation_id": "conv_148",
+    "turn": 8
+  },
+  {
+    "text": "พอดีหนูอยู่เชียงรายค่ะ สะดวกส่งเป็น Flash Express มากกว่าค่ะ",
+    "pattern": "D3",
+    "source_conversation_id": "conv_149",
+    "turn": 4
+  },
+  {
+    "text": "รีบโอนเลยนะ อีก 10 นาทีจะไปส่งของรอบเช้าแล้วค่ะ",
+    "pattern": "B4",
+    "source_conversation_id": "conv_149",
+    "turn": 8
+  },
+  {
+    "text": "เรียนลูกค้าผู้มีอุปการคุณ สินค้าแหวนทองคำแท้ครึ่งสลึงยังมีพร้อมจัดส่งค่ะ",
+    "pattern": "D2",
+    "source_conversation_id": "conv_150",
+    "turn": 2
+  },
+  {
+    "text": "ทางร้านค้าไม่มีบริการเก็บเงินปลายทางนะคะ",
+    "pattern": "B3",
+    "source_conversation_id": "conv_150",
+    "turn": 4
+  },
+  {
+    "text": "ตอนนี้ 4500 ถ้ารับเลยเหลือ 4000 ค่ะ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_150",
+    "turn": 8
+  },
+  {
+    "text": "โอนเข้าชื่อ นาย สมชาย แสนดี นะคะ",
+    "pattern": "A2",
+    "source_conversation_id": "conv_150",
+    "turn": 10
+  },
+  {
+    "text": "แอดไลน์มาคุยต่อนะ @iphonegud2",
+    "pattern": "A3",
+    "source_conversation_id": "conv_151",
+    "turn": 4
+  },
+  {
+    "text": "ไม่สะดวกนัดเจอเลยจ้า",
+    "pattern": "B2",
+    "source_conversation_id": "conv_151",
+    "turn": 6
+  },
+  {
+    "text": "ไม่มีปลายทางจ้า โอนเงินอย่างเดียว",
+    "pattern": "B3",
+    "source_conversation_id": "conv_151",
+    "turn": 8
+  },
+  {
+    "text": "รีบโอนนะเตง ตอนนี้มีคนทักมาถามอีก 2 คน",
+    "pattern": "B4",
+    "source_conversation_id": "conv_151",
+    "turn": 10
+  },
+  {
+    "text": "ถ้าโอนเลยเดี่ยวลดให้อีก 500 เลยจ้า",
+    "pattern": "C4",
+    "source_conversation_id": "conv_151",
+    "turn": 10
+  },
+  {
+    "text": "ถ่ายเพิ่มไม่ได้แล้วครับผม",
+    "pattern": "D1",
+    "source_conversation_id": "conv_152",
+    "turn": 6
+  },
+  {
+    "text": "ไม่เอาคนกลางนะ ยุ่งยากเสียเวลาครับ",
+    "pattern": "A1",
+    "source_conversation_id": "conv_152",
+    "turn": 8
+  },
+  {
+    "text": "ถ้ารับโอนตรงเลยลดให้เหลือ 17,000",
+    "pattern": "C4",
+    "source_conversation_id": "conv_152",
+    "turn": 8
+  },
+  {
+    "text": "ไม่มีปลายทางครับพี่ โอนตรงอย่างเดียวค้าบ",
+    "pattern": "B3",
+    "source_conversation_id": "conv_152",
+    "turn": 10
+  },
+  {
+    "text": "รูปในโพสต์มีลงไว้แล้วนะคะ ลองเลื่อนดูได้เลยจ้า",
+    "pattern": "D1",
+    "source_conversation_id": "conv_153",
+    "turn": 4
+  },
+  {
+    "text": "พอดีแม่ค้าอยู่เชียงรายค่ะ คงต้องส่ง EMS",
+    "pattern": "D3",
+    "source_conversation_id": "conv_153",
+    "turn": 6
+  },
+  {
+    "text": "โอนเข้าชื่อแฟนแทนนะ บัญชีตัวเองมีปัญหา",
+    "pattern": "A2",
+    "source_conversation_id": "conv_153",
+    "turn": 10
+  },
+  {
+    "text": "รีบโอนหน่อยนะคะพี่",
+    "pattern": "B4",
+    "source_conversation_id": "conv_153",
+    "turn": 12
+  },
+  {
+    "text": "พอดีหนูต้องรีบเอาเงินไปจ่ายค่าเทอมลูกเย็นนี้แล้วค่ะ",
+    "pattern": "C3",
+    "source_conversation_id": "conv_153",
+    "turn": 12
+  },
+  {
+    "text": "ทักไลน์มาคุยได้เลยครับ ID: camera999",
+    "pattern": "A3",
+    "source_conversation_id": "conv_154",
+    "turn": 2
+  },
+  {
+    "text": "ไม่สะดวกนัดเจอเลยครับพี่ พอดีงานยุ่งมาก",
+    "pattern": "B2",
+    "source_conversation_id": "conv_154",
+    "turn": 4
+  },
+  {
+    "text": "มีค่าประกันสินค้าเสียหายระหว่างขนส่งเพิ่มอีก 1,500 บาทนะพี่",
+    "pattern": "B1",
+    "source_conversation_id": "conv_154",
+    "turn": 6
+  },
+  {
+    "text": "ถ้างั้นลดค่าประกันให้เหลือ 500 ก็ได้ครับ",
+    "pattern": "C1",
+    "source_conversation_id": "conv_154",
+    "turn": 10
+  },
+  {
+    "text": "ไม่รับคนกลางจ้า ยุ่งยากเสียเวลา",
+    "pattern": "A1",
+    "source_conversation_id": "conv_155",
+    "turn": 4
+  },
+  {
+    "text": "พอดีหนูอยู่ ตจว.",
+    "pattern": "D3",
+    "source_conversation_id": "conv_155",
+    "turn": 8
+  },
+  {
+    "text": "ด่วนๆ เลย มีคนจ่อคิวทักมาถามเยอะมาก ช้าหมดอดน้า",
+    "pattern": "B4",
+    "source_conversation_id": "conv_155",
+    "turn": 10
+  },
+  {
+    "text": "ถ้าโอนตอนนี้เลยลดให้เหลือใบละ 3,000 เลยจ้า",
+    "pattern": "C4",
+    "source_conversation_id": "conv_155",
+    "turn": 10
+  },
+  {
+    "text": "ไม่มีปลายทางครับพี่ สะดวกโอนอย่างเดียวเลยจ้า",
+    "pattern": "B3",
+    "source_conversation_id": "conv_156",
+    "turn": 8
+  },
+  {
+    "text": "โอนเข้าบัญชีพี่ชายแทนเลยครับ บัญชีผมใช้งานไม่ได้ตอนนี้",
+    "pattern": "A2",
+    "source_conversation_id": "conv_156",
+    "turn": 12
+  },
+  {
+    "text": "พอดีต้องรีบไปเฝ้าไข้แม่ที่โรงพยาบาลด่วนเลยค่ะ",
+    "pattern": "C3",
+    "source_conversation_id": "conv_157",
+    "turn": 6
+  },
+  {
+    "text": "ไม่สะดวกนัดเจอเลยจ้า พอดีต้องรีบไปเฝ้าไข้แม่ที่โรงพยาบาลด่วนเลยค่ะ ต้องส่งไปรษณีย์อย่างเดียว",
+    "pattern": "B2",
+    "source_conversation_id": "conv_157",
+    "turn": 6
+  },
+  {
+    "text": "ไม่เอาคนกลางค่ะ ยุ่งยากหลายขั้นตอน",
+    "pattern": "A1",
+    "source_conversation_id": "conv_157",
+    "turn": 8
+  },
+  {
+    "text": "รีบโอนภายใน 10 นาทีนี้นะคะ",
+    "pattern": "B4",
+    "source_conversation_id": "conv_157",
+    "turn": 10
+  },
+  {
+    "text": "แอดไลน์มาคุยเลยครับพี่ ID: nintendogame",
+    "pattern": "A3",
+    "source_conversation_id": "conv_158",
+    "turn": 4
+  },
+  {
+    "text": "ถ้าจะเอาเกมที่แถมด้วยต้องบวกเพิ่มอีก 1,000 บาทครับผม",
+    "pattern": "C1",
+    "source_conversation_id": "conv_158",
+    "turn": 6
+  },
+  {
+    "text": "ไม่รับปลายทางครับ",
+    "pattern": "B3",
+    "source_conversation_id": "conv_158",
+    "turn": 8
+  },
+  {
+    "text": "ส่งฟรีต้องโอนเงินเต็มจำนวนตอนนี้เลยครับพี่",
+    "pattern": "C4",
+    "source_conversation_id": "conv_158",
+    "turn": 8
+  },
+  {
+    "text": "ไม่สะดวกนัดเลยครับพี่ งานประจำรัดตัวมาก",
+    "pattern": "B2",
+    "source_conversation_id": "conv_158",
+    "turn": 10
+  },
+  {
+    "text": "รถอยู่สุราษฎร์ธานีครับพี่ สะดวกส่งทางไปรษณีย์ไทย",
+    "pattern": "D3",
+    "source_conversation_id": "conv_159",
+    "turn": 4
+  },
+  {
+    "text": "ไม่มีปลายทางเลยครับพี่ มอเตอร์ไซค์คันใหญ่ขนส่งเขาไม่รับทำปลายทางครับ ต้องโอนก่อนเท่านั้นครับ",
+    "pattern": "B3",
+    "source_conversation_id": "conv_159",
+    "turn": 6
+  },
+  {
+    "text": "ต้องมีค่ามัดจำป้ายทะเบียนอีก 1,500 บาทนะพี่",
+    "pattern": "B1",
+    "source_conversation_id": "conv_159",
+    "turn": 8
+  },
+  {
+    "text": "รีบโอนนะพี่เดี๋ยวคิวหลุด",
+    "pattern": "B4",
+    "source_conversation_id": "conv_159",
+    "turn": 12
+  },
+  {
+    "text": "อ๋อ บัญชีนั้นเป็นบัญชีของเถ้าแก่ร้านซ่อมครับ ผมทำงานให้เขา โอนเข้าบัญชีนี้ได้เลยครับปลอดภัยแน่นอน รีบโอนนะพี่เดี๋ยวคิวหลุด",
+    "pattern": "A2",
+    "source_conversation_id": "conv_159",
+    "turn": 12
+  },
+  {
+    "text": "ไม่สะดวกนัดเจอเลยครับพี่ พอดีติดงานด่วนตลอดเลย ช่วงนี้จัดส่งแมสเซนเจอร์อย่างเดียวครับ",
+    "pattern": "B2",
+    "source_conversation_id": "conv_160",
+    "turn": 8
+  },
+  {
+    "text": "ไม่เอาคนกลางครับ ยุ่งยากเรื่องขั้นตอนการโอนเงิน",
+    "pattern": "A1",
+    "source_conversation_id": "conv_160",
+    "turn": 10
+  },
+  {
+    "text": "ไม่มีเก็บเงินปลายทางเลยจ้า",
+    "pattern": "B3",
+    "source_conversation_id": "conv_161",
+    "turn": 6
+  },
+  {
+    "text": "ทักไลน์มาคุยกันดีกว่าครับ",
+    "pattern": "A3",
+    "source_conversation_id": "conv_161",
+    "turn": 8
+  },
+  {
+    "text": "ไม่สะดวกผ่านคนกลางนะคะ",
+    "pattern": "A1",
+    "source_conversation_id": "conv_162",
+    "turn": 6
+  },
+  {
+    "text": "โอนวันนี้ลดให้เหลือ 200",
+    "pattern": "C4",
+    "source_conversation_id": "conv_162",
+    "turn": 8
+  },
+  {
+    "text": "พอดีผมอยู่เชียงใหม่ครับ สะดวกส่ง",
+    "pattern": "D3",
+    "source_conversation_id": "conv_163",
+    "turn": 4
+  },
+  {
+    "text": "โอนเข้าบัญชี วอลเลท เบอร์ 098xxxxxx ชื่อ สมชาย แทนนะ",
+    "pattern": "A2",
+    "source_conversation_id": "conv_163",
+    "turn": 8
+  },
+  {
+    "text": "สนใจทักไลน์ @bagshop_th นะ",
+    "pattern": "A3",
+    "source_conversation_id": "conv_164",
+    "turn": 2
+  },
+  {
+    "text": "ต้องบวกค่าดำเนินการแพ็คของอีก 150 บาทนะคะ",
+    "pattern": "B1",
+    "source_conversation_id": "conv_164",
+    "turn": 6
+  },
+  {
+    "text": "ไม่เอาคนกลางครับ",
+    "pattern": "A1",
+    "source_conversation_id": "conv_165",
+    "turn": 8
+  },
+  {
+    "text": "รีบโอนเลยนะ อีก 5 นาทีผมจะออกไปส่งของ",
+    "pattern": "B4",
+    "source_conversation_id": "conv_166",
+    "turn": 10
+  },
+  {
+    "text": "ทักไลน์มาคุยต่อนะคะ",
+    "pattern": "A3",
+    "source_conversation_id": "conv_167",
+    "turn": 4
+  },
+  {
+    "text": "ต้องรีบใช้เงินไปจ่ายค่าเทอมน้องพรุ่งนี้แล้ว",
+    "pattern": "C3",
+    "source_conversation_id": "conv_167",
+    "turn": 8
+  },
+  {
+    "text": "โอนเต็มตอนนี้ลดเหลือ 4000",
+    "pattern": "C4",
+    "source_conversation_id": "conv_169",
+    "turn": 4
+  },
+  {
+    "text": "โอนเข้าบัญชี วอลเล็ต เบอร์ 082xxxxxx ชื่อ อนันต์",
+    "pattern": "A2",
+    "source_conversation_id": "conv_169",
+    "turn": 6
+  },
+  {
+    "text": "รีบโอนเลยนะ มีคนรอคิวต่อคิวโอนอยู่",
+    "pattern": "B4",
+    "source_conversation_id": "conv_169",
+    "turn": 8
+  },
+  {
+    "text": "อยู่เชียงใหม่ครับผม นัดรับไม่ได้นะ",
+    "pattern": "D3",
+    "source_conversation_id": "conv_170",
+    "turn": 2
+  },
+  {
+    "text": "มีค่าประกันสินค้าเสียหายเพิ่มอีก 200 บาทนะครับ",
+    "pattern": "C1",
+    "source_conversation_id": "conv_170",
+    "turn": 4
+  },
+  {
+    "text": "แอดไลน์มาคุยดีกว่าครับ",
+    "pattern": "A3",
+    "source_conversation_id": "conv_170",
+    "turn": 6
+  },
+  {
+    "text": "พอดีตัวเครื่องอยู่เชียงใหม่ค่ะพี่",
+    "pattern": "D3",
+    "source_conversation_id": "conv_171",
+    "turn": 6
+  },
+  {
+    "text": "ไม่มีปลายทางเลยค่ะ",
+    "pattern": "B3",
+    "source_conversation_id": "conv_171",
+    "turn": 8
+  },
+  {
+    "text": "โอนยอดเต็มวันนี้ลดให้อีก",
+    "pattern": "C4",
+    "source_conversation_id": "conv_171",
+    "turn": 10
+  },
+  {
+    "text": "ถ้ารับเลยตอนนี้ ลดให้อีก",
+    "pattern": "C4",
+    "source_conversation_id": "conv_172",
+    "turn": 10
+  },
+  {
+    "text": "พอดีผมจะย้ายบ้านพรุ่งนี้แล้ว",
+    "pattern": "C3",
+    "source_conversation_id": "conv_173",
+    "turn": 6
+  },
+  {
+    "text": "โอนเข้าชื่อ สุรชัย พลอยดี แทนนะ",
+    "pattern": "A2",
+    "source_conversation_id": "conv_173",
+    "turn": 8
+  },
+  {
+    "text": "ทักไลน์มานะ @sneakerth",
+    "pattern": "A3",
+    "source_conversation_id": "conv_174",
+    "turn": 4
+  },
+  {
+    "text": "มีค่าธรรมเนียมนำเข้ากับค่าดำเนินการอีก 500",
+    "pattern": "B1",
+    "source_conversation_id": "conv_174",
+    "turn": 10
+  },
+  {
+    "text": "ไม่มีปลายทางค่ะ",
+    "pattern": "B3",
+    "source_conversation_id": "conv_175",
+    "turn": 6
+  },
+  {
+    "text": "โอนเข้าชื่อ สมศรี ดวงดี แทนนะ",
+    "pattern": "A2",
+    "source_conversation_id": "conv_176",
+    "turn": 6
+  },
+  {
+    "text": "โอนเต็มจำนวนตอนนี้ลดให้อีก",
+    "pattern": "C4",
+    "source_conversation_id": "conv_176",
+    "turn": 12
+  },
+  {
+    "text": "ขอคิดค่าธรรมเนียมเปลี่ยนชื่อเพิ่มอีก 800",
+    "pattern": "C1",
+    "source_conversation_id": "conv_177",
+    "turn": 10
+  },
+  {
+    "text": "โอนเต็มจำนวนวันนี้ลดให้อีก",
+    "pattern": "C4",
+    "source_conversation_id": "conv_178",
+    "turn": 8
+  },
+  {
+    "text": "พอดีแม่ค้าอยู่ยะลาค่ะเลยส่งไปรษณีย์แทนนะคะ",
+    "pattern": "D3",
+    "source_conversation_id": "conv_179",
+    "turn": 4
+  },
+  {
+    "text": "โอนเข้าชื่อ สมชาย สุขสบาย แทนนะ",
+    "pattern": "A2",
+    "source_conversation_id": "conv_179",
+    "turn": 8
+  },
+  {
+    "text": "แอดไลน์มาคุยเลยเตง",
+    "pattern": "A3",
+    "source_conversation_id": "conv_181",
+    "turn": 4
+  },
+  {
+    "text": "รีบหน่อยนะเตง",
+    "pattern": "B4",
+    "source_conversation_id": "conv_181",
+    "turn": 8
+  },
+  {
+    "text": "ถ้าโอนตอนนี้ลดให้เลย 500",
+    "pattern": "C4",
+    "source_conversation_id": "conv_181",
+    "turn": 8
+  },
+  {
+    "text": "โอนเข้าชื่อ สมนึก แทนนะ",
+    "pattern": "A2",
+    "source_conversation_id": "conv_183",
+    "turn": 8
+  },
+  {
+    "text": "ถ้าโอนตอนนี้แถมสเปรย์กันน้ำให้ฟรีเลยนะ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_184",
+    "turn": 12
+  },
+  {
+    "text": "จะย้ายบ้านพรุ่งนี้แล้ว",
+    "pattern": "C3",
+    "source_conversation_id": "conv_185",
+    "turn": 8
+  },
+  {
+    "text": "ไม่ว่างออกไปนัดเจอใครเลยจ้า",
+    "pattern": "B2",
+    "source_conversation_id": "conv_185",
+    "turn": 8
+  },
+  {
+    "text": "ถ้ารับเลยตอนนี้เหลือ 7500 เลยครับ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_186",
+    "turn": 10
+  },
+  {
+    "text": "ต้องบวกค่าส่งเพิ่มอีก 200 นะคะ",
+    "pattern": "C1",
+    "source_conversation_id": "conv_187",
+    "turn": 10
+  },
+  {
+    "text": "ไม่รับคนกลางนะ",
+    "pattern": "A1",
+    "source_conversation_id": "conv_188",
+    "turn": 10
+  },
+  {
+    "text": "โอนเข้าชื่อ นายทองดี แทนนะ",
+    "pattern": "A2",
+    "source_conversation_id": "conv_189",
+    "turn": 8
+  },
+  {
+    "text": "ถ้าโอนตอนนี้ลดเหลือ 3000 ถ้วนไปเลย",
+    "pattern": "C4",
+    "source_conversation_id": "conv_189",
+    "turn": 10
+  },
+  {
+    "text": "รีบโอนเลยนะ อีก 5 นาทีมีคนจะเอาแล้วจ้า",
+    "pattern": "B4",
+    "source_conversation_id": "conv_189",
+    "turn": 12
+  },
+  {
+    "text": "จะย้ายบ้านไปต่างจังหวัดพรุ่งนี้แล้ว",
+    "pattern": "C3",
+    "source_conversation_id": "conv_190",
+    "turn": 6
+  },
+  {
+    "text": "นัดเจอไม่ได้แล้วครับ",
+    "pattern": "B2",
+    "source_conversation_id": "conv_190",
+    "turn": 6
+  },
+  {
+    "text": "ด่วนๆ เลยนะ มีคนสนใจเยอะมาก",
+    "pattern": "B4",
+    "source_conversation_id": "conv_190",
+    "turn": 10
+  },
+  {
+    "text": "ถ้ารับเลยตอนนี้เหลือ 14000 รวมส่งสไลด์ให้ฟรีเลยครับ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_190",
+    "turn": 12
+  },
+  {
+    "text": "ถ่ายรูปเพิ่มไม่ได้แล้วจ้า",
+    "pattern": "D1",
+    "source_conversation_id": "conv_191",
+    "turn": 4
+  },
+  {
+    "text": "ต้องโอนใน 10 นาทีนี้",
+    "pattern": "B4",
+    "source_conversation_id": "conv_191",
+    "turn": 12
+  },
+  {
+    "text": "รีบโอนตอนนี้เลยลดให้เหลือ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_191",
+    "turn": 12
+  },
+  {
+    "text": "โอนเข้าชื่อ สุภัทร แทนนะ",
+    "pattern": "A2",
+    "source_conversation_id": "conv_192",
+    "turn": 10
+  },
+  {
+    "text": "รีบโอนเลยนะ",
+    "pattern": "B4",
+    "source_conversation_id": "conv_192",
+    "turn": 12
+  },
+  {
+    "text": "แอดไลน์คุยต่อนะครับ",
+    "pattern": "A3",
+    "source_conversation_id": "conv_193",
+    "turn": 10
+  },
+  {
+    "text": "ชิปปิ้งเพิ่งแจ้งมาตะกี้นี้เองครับ",
+    "pattern": "C1",
+    "source_conversation_id": "conv_194",
+    "turn": 8
+  },
+  {
+    "text": "ต้องรีบส่งยอดให้โกดังบ่ายนี้แล้ว",
+    "pattern": "C3",
+    "source_conversation_id": "conv_194",
+    "turn": 10
+  },
+  {
+    "text": "ลดค่าวางให้เหลือมัดจำ 300 พอครับ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_194",
+    "turn": 10
+  },
+  {
+    "text": "ถ้าโอนใน 5 นาทีนี้",
+    "pattern": "B4",
+    "source_conversation_id": "conv_195",
+    "turn": 12
+  },
+  {
+    "text": "ส่งฟรีให้เลย",
+    "pattern": "C4",
+    "source_conversation_id": "conv_195",
+    "turn": 12
+  },
+  {
+    "text": "ต้องโอนก่อนถึงจะส่งของให้ตรวจได้ค่ะ",
+    "pattern": "A1",
+    "source_conversation_id": "conv_196",
+    "turn": 12
+  },
+  {
+    "text": "รีบโอนเลยนะ อีก 10 นาที",
+    "pattern": "B4",
+    "source_conversation_id": "conv_197",
+    "turn": 12
+  },
+  {
+    "text": "พอดีจะย้ายบ้านพรุ่งนี้แล้ว",
+    "pattern": "C3",
+    "source_conversation_id": "conv_198",
+    "turn": 6
+  },
+  {
+    "text": "ต้องโอนก่อนถึงจะส่งของให้ตรวจได้นะ",
+    "pattern": "A1",
+    "source_conversation_id": "conv_198",
+    "turn": 8
+  },
+  {
+    "text": "แอดไลน์คุยต่อนะคะ",
+    "pattern": "A3",
+    "source_conversation_id": "conv_199",
+    "turn": 6
+  },
+  {
+    "text": "โอนเข้าชื่อ วิภา แทนนะ",
+    "pattern": "A2",
+    "source_conversation_id": "conv_199",
+    "turn": 12
+  },
+  {
+    "text": "พอดีตัวแม่ค้าอยู่เชียงใหม่ค่ะพี่ สะดวกส่งเป็น EMS หรือ Flash Express",
+    "pattern": "D3",
+    "source_conversation_id": "conv_401",
+    "turn": 6
+  },
+  {
+    "text": "รูปในโพสต์ก็ชัดแล้วค่ะพี่ ถ่ายเพิ่มไม่ได้แล้วค่ะ",
+    "pattern": "D1",
+    "source_conversation_id": "conv_402",
+    "turn": 8
+  },
+  {
+    "text": "ถ้าเตงโอนเต็มจำนวนตอนนี้ลดให้อีก 500",
+    "pattern": "C4",
+    "source_conversation_id": "conv_403",
+    "turn": 4
+  },
+  {
+    "text": "ไม่มีปลายทางครับ โอนก่อนเท่านั้นนะเตง",
+    "pattern": "B3",
+    "source_conversation_id": "conv_404",
+    "turn": 6
+  },
+  {
+    "text": "ต้องบวกค่าส่งเพิ่มอีก 80 บาทนะคะ",
+    "pattern": "C1",
+    "source_conversation_id": "conv_404",
+    "turn": 8
+  },
+  {
+    "text": "เรียนท่านลูกค้าผู้มีอุปการคุณ",
+    "pattern": "D2",
+    "source_conversation_id": "conv_405",
+    "turn": 2
+  },
+  {
+    "text": "ไม่สะดวกนัดเจอรับสินค้าทุกกรณีค่ะ",
+    "pattern": "B2",
+    "source_conversation_id": "conv_405",
+    "turn": 6
+  },
+  {
+    "text": "พี่ขอปรับราคาเป็น 4,000 นะคะ",
+    "pattern": "B1",
+    "source_conversation_id": "conv_406",
+    "turn": 4
+  },
+  {
+    "text": "รีบใช้เงินด่วนไปจ่ายค่าเทอมลูกวันพรุ่งนี้แล้วค่ะ",
+    "pattern": "C3",
+    "source_conversation_id": "conv_406",
+    "turn": 6
+  },
+  {
+    "text": "พอดีผมอยู่เชียงรายเลยครับพี่ สะดวกส่งเป็นพวก Flash หรือ ไปรษณีย์ไทย",
+    "pattern": "D3",
+    "source_conversation_id": "conv_407",
+    "turn": 4
+  },
+  {
+    "text": "ไม่มีปลายทางเลยครับพี่",
+    "pattern": "B3",
+    "source_conversation_id": "conv_407",
+    "turn": 6
+  },
+  {
+    "text": "ถ้าโอนเต็มจำนวนวันนี้ผมลดให้พิเศษเลย",
+    "pattern": "C4",
+    "source_conversation_id": "conv_407",
+    "turn": 8
+  },
+  {
+    "text": "พอดีผมอยู่ตจว. ครับพี่ อยู่สุราษฎร์ธานีเลย",
+    "pattern": "D3",
+    "source_conversation_id": "conv_408",
+    "turn": 8
+  },
+  {
+    "text": "ขอแจ้งเปลี่ยนเงื่อนไขนิดนึงนะคะ พอดีช่วงนี้ค่าส่งปรับขึ้น ขอคิดค่าส่งเพิ่ม 50 บาทนะคะ",
+    "pattern": "C1",
+    "source_conversation_id": "conv_409",
+    "turn": 4
+  },
+  {
+    "text": "รีบหน่อยน้าเตง มีคนทักมาขอเอฟต่อคิวเยอะเลย",
+    "pattern": "B4",
+    "source_conversation_id": "conv_409",
+    "turn": 10
+  },
+  {
+    "text": "รูปที่ลงไว้ในโพสต์ก็เห็นชัดทุกมุมแล้วนะคะ ถ่ายเพิ่มไม่ได้แล้วค่ะ",
+    "pattern": "D1",
+    "source_conversation_id": "conv_410",
+    "turn": 4
+  },
+  {
+    "text": "พอดีแม่ค้าอยู่ต่างจังหวัดค่ะ อยู่พัทยาเลย",
+    "pattern": "D3",
+    "source_conversation_id": "conv_410",
+    "turn": 6
+  },
+  {
+    "text": "ไม่มีเก็บเงินปลายทางนะคะ",
+    "pattern": "B3",
+    "source_conversation_id": "conv_410",
+    "turn": 8
+  },
+  {
+    "text": "พอดีเค้าอยู่ยะลาเลยอ่าเตง สะดวกส่ง Flash Express",
+    "pattern": "D3",
+    "source_conversation_id": "conv_411",
+    "turn": 6
+  },
+  {
+    "text": "ไม่มีปลายทางจ้า โอนเงินอย่างเดียวนะคะ",
+    "pattern": "B3",
+    "source_conversation_id": "conv_411",
+    "turn": 8
+  },
+  {
+    "text": "ไม่สะดวกถ่ายรูปเพิ่มแล้วครับ",
+    "pattern": "D1",
+    "source_conversation_id": "conv_412",
+    "turn": 8
+  },
+  {
+    "text": "เรียนลูกค้าผู้มีอุปการคุณทุกท่าน บัตรคอนเสิร์ตรายการดังกล่าวยังคงมีสินค้าพร้อมจัดส่งทันทีค่ะ",
+    "pattern": "D2",
+    "source_conversation_id": "conv_413",
+    "turn": 2
+  },
+  {
+    "text": "กรุณาดำเนินการโอนเงินเข้าบัญชีและส่งหลักฐานการชำระเงินโดยด่วนที่สุด",
+    "pattern": "B4",
+    "source_conversation_id": "conv_413",
+    "turn": 8
+  },
+  {
+    "text": "มีค่าประกันสินค้ากับค่ากล่องเพิ่มอีก 250 บาทนะคะ",
+    "pattern": "C1",
+    "source_conversation_id": "conv_414",
+    "turn": 4
+  },
+  {
+    "text": "ไม่สะดวกนัดเจอทุกกรณีเลยค่ะ ส่งแฟลชอย่างเดียวเลยจ้า",
+    "pattern": "B2",
+    "source_conversation_id": "conv_414",
+    "turn": 8
+  },
+  {
+    "text": "พอดีผมต้องย้ายบ้านไปต่างจังหวัดวันพรุ่งนี้แล้วครับ เลยต้องรีบปล่อยของวันนี้เลย",
+    "pattern": "C3",
+    "source_conversation_id": "conv_415",
+    "turn": 6
+  },
+  {
+    "text": "ถ้ารับเลยและโอนเต็มจำนวนตอนนี้ ผมลดให้เหลือ 6,500",
+    "pattern": "C4",
+    "source_conversation_id": "conv_415",
+    "turn": 8
+  },
+  {
+    "text": "ตอนนี้ราคาปรับเป็น 1,500 บาทแล้วนะครับ",
+    "pattern": "B1",
+    "source_conversation_id": "conv_416",
+    "turn": 4
+  },
+  {
+    "text": "ร้านเราไม่มีบริการเก็บเงินปลายทางนะครับ โอนก่อนส่งเท่านั้นครับ",
+    "pattern": "B3",
+    "source_conversation_id": "conv_416",
+    "turn": 8
+  },
+  {
+    "text": "ตัวเองเค้าอยู่เชียงรายเลยอ่า นัดรับไม่ได้น้า ส่ง EMS",
+    "pattern": "D3",
+    "source_conversation_id": "conv_417",
+    "turn": 6
+  },
+  {
+    "text": "ถ้ารับและโอนเลยตอนนี้เค้าลดให้ 500 บาทส่งฟรีไปเลยน้า",
+    "pattern": "C4",
+    "source_conversation_id": "conv_417",
+    "turn": 8
+  },
+  {
+    "text": "รีบหน่อยนะครับพี่ มีอีกคิวทักมาถามกำลังจะโอนแล้วครับ",
+    "pattern": "B4",
+    "source_conversation_id": "conv_418",
+    "turn": 10
+  },
+  {
+    "text": "เรียนท่านลูกค้า สินค้าดังกล่าวเป็นของแท้ 100%",
+    "pattern": "D2",
+    "source_conversation_id": "conv_419",
+    "turn": 2
+  },
+  {
+    "text": "ทางร้านไม่สะดวกถ่ายรูปเพิ่มเติมให้ได้ค่ะ",
+    "pattern": "D1",
+    "source_conversation_id": "conv_419",
+    "turn": 6
+  },
+  {
+    "text": "มีค่าส่งเคอรี่เพิ่มอีก 100 บาทนะครับ ไม่รวมส่งแล้วครับ",
+    "pattern": "C1",
+    "source_conversation_id": "conv_420",
+    "turn": 4
+  },
+  {
+    "text": "พอดีผมอยู่สงขลาครับพี่ ไม่สะดวกนัดเจอเลย สะดวกส่งขนส่งอย่างเดียวครับ",
+    "pattern": "D3",
+    "source_conversation_id": "conv_420",
+    "turn": 8
+  },
+  {
+    "text": "ไม่สะดวกเก็บเงินปลายทางเลยจ้า",
+    "pattern": "B3",
+    "source_conversation_id": "conv_421",
+    "turn": 8
+  },
+  {
+    "text": "พอดีตัวผมอยู่เชียงใหม่เลยครับพี่",
+    "pattern": "D3",
+    "source_conversation_id": "conv_422",
+    "turn": 4
+  },
+  {
+    "text": "รีบโอนหน่อยนะครับพี่",
+    "pattern": "B4",
+    "source_conversation_id": "conv_422",
+    "turn": 8
+  },
+  {
+    "text": "ต้องขอคิดค่าส่งเพิ่ม 80 บาทนะคะ",
+    "pattern": "C1",
+    "source_conversation_id": "conv_423",
+    "turn": 8
+  },
+  {
+    "text": "ชำระเงินเต็มจำนวนภายในตอนนี้ ทางเรามีส่วนลดพิเศษ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_424",
+    "turn": 4
+  },
+  {
+    "text": "ไม่มีบริการเก็บเงินปลายทางค่ะ",
+    "pattern": "B3",
+    "source_conversation_id": "conv_424",
+    "turn": 8
+  },
+  {
+    "text": "ไม่สะดวกนัดรับเลยครับ",
+    "pattern": "B2",
+    "source_conversation_id": "conv_425",
+    "turn": 4
+  },
+  {
+    "text": "ต้องรีบย้ายบ้านไปต่างจังหวัดพรุ่งนี้แล้วครับ",
+    "pattern": "C3",
+    "source_conversation_id": "conv_425",
+    "turn": 6
+  },
+  {
+    "text": "รูปในโพสต์ผมลงไว้ชัดเจนทุกมุมแล้วครับ ถ่ายเพิ่มไม่ได้แล้ว",
+    "pattern": "D1",
+    "source_conversation_id": "conv_426",
+    "turn": 4
+  },
+  {
+    "text": "พอดีผมอยู่ยะลาเลยครับน้อง",
+    "pattern": "D3",
+    "source_conversation_id": "conv_427",
+    "turn": 8
+  },
+  {
+    "text": "ขอเปลี่ยนเป็นโอนเต็มจำนวนแทนนะคะ",
+    "pattern": "C1",
+    "source_conversation_id": "conv_428",
+    "turn": 6
+  },
+  {
+    "text": "รีบหน่อยนะคะ",
+    "pattern": "B4",
+    "source_conversation_id": "conv_428",
+    "turn": 8
+  },
+  {
+    "text": "ยินดีต้อนรับสู่บริการสตรีมมิ่งระดับพรีเมียมค่ะ",
+    "pattern": "D2",
+    "source_conversation_id": "conv_429",
+    "turn": 2
+  },
+  {
+    "text": "ไม่มีบริการเก็บเงินปลายทาง",
+    "pattern": "B3",
+    "source_conversation_id": "conv_429",
+    "turn": 4
+  },
+  {
+    "text": "พอดีหนูอยู่สุราษฎร์ธานีเลยค่ะเตง",
+    "pattern": "D3",
+    "source_conversation_id": "conv_430",
+    "turn": 4
+  },
+  {
+    "text": "ปลายทางไม่ได้ทำเลยค่ะเตง",
+    "pattern": "B3",
+    "source_conversation_id": "conv_430",
+    "turn": 6
+  },
+  {
+    "text": "ถ้าเตงโอนเต็มวันนี้เลย หนูลดพิเศษให้",
+    "pattern": "C4",
+    "source_conversation_id": "conv_430",
+    "turn": 6
+  },
+  {
+    "text": "พอดีผมอยู่เชียงใหม่ครับพี่",
+    "pattern": "D3",
+    "source_conversation_id": "conv_432",
+    "turn": 4
+  },
+  {
+    "text": "ต้องมีค่าส่งเพิ่มอีก 80 บาทค่ะ",
+    "pattern": "C1",
+    "source_conversation_id": "conv_433",
+    "turn": 4
+  },
+  {
+    "text": "ลดให้เหลือ 750 ส่งฟรีไปเลยค่ะ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_433",
+    "turn": 8
+  },
+  {
+    "text": "ไม่สามารถถ่ายภาพเพิ่มเติมให้ได้ครับ",
+    "pattern": "D1",
+    "source_conversation_id": "conv_434",
+    "turn": 6
+  },
+  {
+    "text": "พี่จะย้ายบ้านพรุ่งนี้แล้ว ต้องรีบปล่อยวันนี้เลย",
+    "pattern": "C3",
+    "source_conversation_id": "conv_435",
+    "turn": 2
+  },
+  {
+    "text": "โอนตอนนี้เลยได้ไหมครับน้อง",
+    "pattern": "B4",
+    "source_conversation_id": "conv_435",
+    "turn": 6
+  },
+  {
+    "text": "มีค่าธรรมเนียมตรวจเช็คสภาพกล้องจากช่างอีก 400 บาทนะครับ",
+    "pattern": "B1",
+    "source_conversation_id": "conv_436",
+    "turn": 6
+  },
+  {
+    "text": "พอดีผมอยู่ยะลาเลยครับพี่",
+    "pattern": "D3",
+    "source_conversation_id": "conv_437",
+    "turn": 4
+  },
+  {
+    "text": "ไม่มีเก็บเงินปลายทางเลยครับพี่",
+    "pattern": "B3",
+    "source_conversation_id": "conv_437",
+    "turn": 8
+  },
+  {
+    "text": "ต้องโอนมัดจำก่อน 1000 บาทเพื่อจองคิวนะครับ",
+    "pattern": "C1",
+    "source_conversation_id": "conv_438",
+    "turn": 4
+  },
+  {
+    "text": "อีก 10 นาทีปิดยอดครับ",
+    "pattern": "B4",
+    "source_conversation_id": "conv_438",
+    "turn": 8
+  },
+  {
+    "text": "เรียนลูกค้าผู้มีเกียรติ",
+    "pattern": "D2",
+    "source_conversation_id": "conv_439",
+    "turn": 2
+  },
+  {
+    "text": "ยินดีมอบส่วนลดพิเศษเพิ่มเติมอีก 150 บาททันทีครับ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_439",
+    "turn": 4
+  },
+  {
+    "text": "พอดีแม่ค้าอยู่เชียงใหม่ค่ะพี่ สะดวกส่งเป็นพวก Flash Express",
+    "pattern": "D3",
+    "source_conversation_id": "conv_441",
+    "turn": 4
+  },
+  {
+    "text": "รูปป้ายอยู่ในโพสต์แล้วน้า",
+    "pattern": "D1",
+    "source_conversation_id": "conv_441",
+    "turn": 10
+  },
+  {
+    "text": "ถ้ารับเลยลดให้เหลือ 1500",
+    "pattern": "C4",
+    "source_conversation_id": "conv_442",
+    "turn": 8
+  },
+  {
+    "text": "งั้นขอคิดค่าส่งเพิ่มเป็น 100 แล้วกันค่ะ",
+    "pattern": "C1",
+    "source_conversation_id": "conv_443",
+    "turn": 10
+  },
+  {
+    "text": "ร้านค้าตั้งอยู่ที่จังหวัดยะลา จึงไม่สะดวกนัดเจอรับสินค้า",
+    "pattern": "D3",
+    "source_conversation_id": "conv_444",
+    "turn": 4
+  },
+  {
+    "text": "ไม่มีนโยบายการเก็บเงินปลายทาง",
+    "pattern": "B3",
+    "source_conversation_id": "conv_444",
+    "turn": 8
+  },
+  {
+    "text": "ต้องบวกค่าดำเนินการเพิ่มอีก 50 บาทนะคะ",
+    "pattern": "B1",
+    "source_conversation_id": "conv_445",
+    "turn": 6
+  },
+  {
+    "text": "รีบใช้เงินไปจ่ายค่าเทอมลูกพรุ่งนี้แล้ว",
+    "pattern": "C3",
+    "source_conversation_id": "conv_445",
+    "turn": 10
+  },
+  {
+    "text": "ถ่ายเพิ่มไม่ได้แล้วจ้า รูปในโพสต์ก็ชัดแล้วนะ",
+    "pattern": "D1",
+    "source_conversation_id": "conv_446",
+    "turn": 6
+  },
+  {
+    "text": "ถ้าโอนเต็มจำนวนตอนนี้ลดให้เหลือ 750",
+    "pattern": "C4",
+    "source_conversation_id": "conv_447",
+    "turn": 4
+  },
+  {
+    "text": "รีบโอนเลยนะ อีก 5 นาทีจะออกไปส่งของแล้ว",
+    "pattern": "B4",
+    "source_conversation_id": "conv_447",
+    "turn": 6
+  },
+  {
+    "text": "พอดีตัวเมืองอยู่เชียงรายเลยค่ะพี่",
+    "pattern": "D3",
+    "source_conversation_id": "conv_448",
+    "turn": 4
+  },
+  {
+    "text": "ขอเปลี่ยนเงื่อนไขคิดค่าส่งเพิ่ม 150 บาทนะคะ",
+    "pattern": "C1",
+    "source_conversation_id": "conv_448",
+    "turn": 10
+  },
+  {
+    "text": "เรียนแจ้งว่าหนังสือคู่มือเตรียมสอบยังมีสินค้าพร้อมจำหน่ายครับ",
+    "pattern": "D2",
+    "source_conversation_id": "conv_449",
+    "turn": 2
+  },
+  {
+    "text": "ไม่สะดวกนัดเจอรับสินค้าทุกกรณี",
+    "pattern": "B2",
+    "source_conversation_id": "conv_449",
+    "turn": 4
+  },
+  {
+    "text": "ไม่มีนโยบายถ่ายภาพสินค้าเพิ่มเติมให้กับลูกค้า",
+    "pattern": "D1",
+    "source_conversation_id": "conv_449",
+    "turn": 10
+  },
+  {
+    "text": "ไม่มีเก็บปลายทางเลยจ้า",
+    "pattern": "B3",
+    "source_conversation_id": "conv_450",
+    "turn": 4
+  },
+  {
+    "text": "ต้องรีบย้ายบ้านพรุ่งนี้แล้ว",
+    "pattern": "C3",
+    "source_conversation_id": "conv_450",
+    "turn": 6
+  },
+  {
+    "text": "ถ้าเธอโอนเงินเต็มจำนวนตอนนี้เลยนะ เราลดพิเศษให้เหลือ 2,000",
+    "pattern": "C4",
+    "source_conversation_id": "conv_450",
+    "turn": 8
+  },
+  {
+    "text": "รีบตัดสินใจน้า",
+    "pattern": "B4",
+    "source_conversation_id": "conv_450",
+    "turn": 10
+  },
+  {
+    "text": "พอดีแม่ค้าอยู่เชียงรายเลยค่ะพี่ สะดวกส่งเป็นพวก Flash หรือไปรษณีย์ไทยมากกว่าน้า",
+    "pattern": "D3",
+    "source_conversation_id": "conv_451",
+    "turn": 8
+  },
+  {
+    "text": "ไม่มีเก็บปลายทางเลยค่ะเตง",
+    "pattern": "B3",
+    "source_conversation_id": "conv_452",
+    "turn": 6
+  },
+  {
+    "text": "ถ้าโอนต้องขอคิดค่าส่งเพิ่ม 50 บาทนะคะ",
+    "pattern": "C1",
+    "source_conversation_id": "conv_452",
+    "turn": 8
+  },
+  {
+    "text": "เรียนลูกค้าผู้มีอุปการคุณ สินค้าหูฟังบลูทูธ Sony ยังมีสินค้าพร้อมจัดส่งครับ",
+    "pattern": "D2",
+    "source_conversation_id": "conv_453",
+    "turn": 2
+  },
+  {
+    "text": "ทางร้านไม่สะดวกนัดเจอเพื่อรับสินค้าทุกกรณี จัดส่งทางไปรษณีย์เท่านั้นครับ",
+    "pattern": "B2",
+    "source_conversation_id": "conv_453",
+    "turn": 6
+  },
+  {
+    "text": "โอนเงินภายในชั่วโมงนี้ ลดให้พิเศษจาก 900 เหลือ 750",
+    "pattern": "C4",
+    "source_conversation_id": "conv_454",
+    "turn": 6
+  },
+  {
+    "text": "รีบโอนหน่อยน้าเตง พอดีมีอีกคิวทักมาถามเหมือนกัน",
+    "pattern": "B4",
+    "source_conversation_id": "conv_454",
+    "turn": 8
+  },
+  {
+    "text": "พอดีพี่ต้องรีบย้ายหอพักวันพรุ่งนี้แล้ว อยากปล่อยของออกให้หมดวันนี้เลยครับ",
+    "pattern": "C3",
+    "source_conversation_id": "conv_455",
+    "turn": 4
+  },
+  {
+    "text": "พอดีตอนนี้พี่มาแพ็คของเตรียมย้ายบ้านอยู่ที่ขอนแก่นแล้วครับน้อง สะดวกส่งเป็นด่วน Flash Express",
+    "pattern": "D3",
+    "source_conversation_id": "conv_455",
+    "turn": 6
+  },
+  {
+    "text": "ไม่มีปลายทางครับพี่",
+    "pattern": "B3",
+    "source_conversation_id": "conv_456",
+    "turn": 4
+  },
+  {
+    "text": "มีค่าดำเนินการแพ็คสินค้าและค่ากล่องเพิ่มอีก 150 บาทครับ",
+    "pattern": "B1",
+    "source_conversation_id": "conv_456",
+    "turn": 6
+  },
+  {
+    "text": "ไม่สะดวกถ่ายเพิ่มแล้วจ้า พอดีเก็บของลงกล่องพร้อมส่งแล้ว",
+    "pattern": "D1",
+    "source_conversation_id": "conv_457",
+    "turn": 6
+  },
+  {
+    "text": "ตอนนี้ต้องคิดค่าส่งเพิ่ม 60 บาทนะคะ",
+    "pattern": "C1",
+    "source_conversation_id": "conv_458",
+    "turn": 6
+  },
+  {
+    "text": "รีบหน่อยนะคะเตง พอดีมีอีกคนทักมาจะเอาเหมือนกัน",
+    "pattern": "B4",
+    "source_conversation_id": "conv_458",
+    "turn": 10
+  },
+  {
+    "text": "เรียนท่านลูกค้าผู้มีอุปการคุณ สินค้าการ์ดจอ GTX 1660 Super ยังมีพร้อมจัดส่งครับ",
+    "pattern": "D2",
+    "source_conversation_id": "conv_459",
+    "turn": 2
+  },
+  {
+    "text": "โอนชำระเงินเต็มจำนวนทันทีภายในเวลานี้ ทางเรายินดีมอบส่วนลดพิเศษเหลือเพียง 3,000 บาทถ้วน",
+    "pattern": "C4",
+    "source_conversation_id": "conv_459",
+    "turn": 6
+  },
+  {
+    "text": "ไม่สะดวกนัดเจอเลยจ้า สะดวกส่งไปรษณีย์อย่างเดียวนะคะ",
+    "pattern": "B2",
+    "source_conversation_id": "conv_460",
+    "turn": 4
+  },
+  {
+    "text": "ถ่ายเพิ่มไม่ได้แล้วจ้า พอดีเก็บใส่กล่องซีลไว้แล้ว",
+    "pattern": "D1",
+    "source_conversation_id": "conv_460",
+    "turn": 8
+  },
+  {
+    "text": "พอดีเค้าอยู่เชียงใหม่อะเตง ไม่สะดวกนัดเจอเลย ขอส่งเป็นแฟลชแทน",
+    "pattern": "D3",
+    "source_conversation_id": "conv_461",
+    "turn": 4
+  },
+  {
+    "text": "ต้องมีค่าประกันขนส่งเพิ่มอีก 150 บาทน้า",
+    "pattern": "C1",
+    "source_conversation_id": "conv_463",
+    "turn": 6
+  },
+  {
+    "text": "รีบโอนหน่อยน้าเตง อีก 10 นาที",
+    "pattern": "B4",
+    "source_conversation_id": "conv_463",
+    "turn": 10
+  },
+  {
+    "text": "ไม่มีปลายทางเลยค่าเตง",
+    "pattern": "B3",
+    "source_conversation_id": "conv_464",
+    "turn": 6
+  },
+  {
+    "text": "โอนเต็มจำนวนตอนนี้ลดให้พิเศษเลย",
+    "pattern": "C4",
+    "source_conversation_id": "conv_464",
+    "turn": 8
+  },
+  {
+    "text": "ต้องขอเรียกเก็บค่าธรรมเนียมการเข้าใช้งานครั้งแรกเพิ่มอีก 200 บาท",
+    "pattern": "B1",
+    "source_conversation_id": "conv_465",
+    "turn": 6
+  },
+  {
+    "text": "ไม่นัดเจอเลยจ้า สะดวกส่งไปรษณีย์อย่างเดียวเลยค่ะ",
+    "pattern": "B2",
+    "source_conversation_id": "conv_466",
+    "turn": 4
+  },
+  {
+    "text": "พอดีเค้าจะย้ายบ้านพรุ่งนี้แล้วอ่าเตง ต้องรีบขายวันนี้เลย",
+    "pattern": "C3",
+    "source_conversation_id": "conv_466",
+    "turn": 6
+  },
+  {
+    "text": "พอดีผมอยู่พิษณุโลกอ่ะครับพี่ ไม่สะดวกนัดเจอเลย ขอส่งเป็น EMS หรือ Flash",
+    "pattern": "D3",
+    "source_conversation_id": "conv_467",
+    "turn": 8
+  },
+  {
+    "text": "ถ้าส่ง EMS ต้องบวกเพิ่ม 80 บาทน้า แล้วก็ไม่มีส่งฟรีแล้วจ้า",
+    "pattern": "C1",
+    "source_conversation_id": "conv_468",
+    "turn": 6
+  },
+  {
+    "text": "ไม่มีปลายทางเลยจ้าเตง",
+    "pattern": "B3",
+    "source_conversation_id": "conv_468",
+    "turn": 10
+  },
+  {
+    "text": "เรียนแจ้งลูกค้าผู้มีอุปการคุณ",
+    "pattern": "D2",
+    "source_conversation_id": "conv_469",
+    "turn": 2
+  },
+  {
+    "text": "ทางเราไม่สะดวกจัดส่งภาพเพิ่มเติมในส่วนนี้แล้วครับ",
+    "pattern": "D1",
+    "source_conversation_id": "conv_469",
+    "turn": 6
+  },
+  {
+    "text": "ถ้าโอนเต็มจำนวนตอนนี้เลย เค้าลดให้เหลือ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_470",
+    "turn": 4
+  },
+  {
+    "text": "รีบหน่อยน้าเตง พอดีมีอีกคนทักมาถามคิวต่อไปแล้ว",
+    "pattern": "B4",
+    "source_conversation_id": "conv_470",
+    "turn": 8
+  },
+  {
+    "text": "รีบหน่อยนะ เดี๋ยวของหมด",
+    "pattern": "B4",
+    "source_conversation_id": "conv_471",
+    "turn": 10
+  },
+  {
+    "text": "พอดีพี่อยู่เชียงรายเลยค่ะ สะดวกส่งเป็น Flash Express",
+    "pattern": "D3",
+    "source_conversation_id": "conv_472",
+    "turn": 4
+  },
+  {
+    "text": "โอนเต็มจำนวนตอนนี้ลดให้อีก 100 นะคะ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_472",
+    "turn": 8
+  },
+  {
+    "text": "เรียนลูกค้าผู้มีอุปการคุณ สินค้าดังกล่าวยังคงมีจำหน่ายอยู่ค่ะ",
+    "pattern": "D2",
+    "source_conversation_id": "conv_474",
+    "turn": 2
+  },
+  {
+    "text": "ทางร้านไม่มีปลายทางครับ",
+    "pattern": "B3",
+    "source_conversation_id": "conv_474",
+    "turn": 6
+  },
+  {
+    "text": "พอดีเปลี่ยนเงื่อนไขส่งฟรีลทบเป็นมีค่าส่งแล้วค่ะ",
+    "pattern": "C1",
+    "source_conversation_id": "conv_475",
+    "turn": 8
+  },
+  {
+    "text": "พอดีผมอยู่เชียงใหม่ครับพี่ สะดวกส่งเป็น EMS หรือ Flash Express",
+    "pattern": "D3",
+    "source_conversation_id": "conv_478",
+    "turn": 4
+  },
+  {
+    "text": "เรียนท่านลูกค้า เครื่องฟอกอากาศดังกล่าวยังคงทำงานได้อย่างมีประสิทธิภาพเต็มร้อยเปอร์เซ็นต์ค่ะ",
+    "pattern": "D2",
+    "source_conversation_id": "conv_479",
+    "turn": 2
+  },
+  {
+    "text": "พอดีขอเปลี่ยนเงื่อนไขเป็นคิดค่าส่งเพิ่ม 150 บาทนะคะ",
+    "pattern": "C1",
+    "source_conversation_id": "conv_480",
+    "turn": 8
+  },
+  {
+    "text": "ถ่ายรูปในโพสต์ให้ดูครบแล้วน้า",
+    "pattern": "D1",
+    "source_conversation_id": "conv_481",
+    "turn": 8
+  },
+  {
+    "text": "ไม่มีปลายทางเลยจ้า",
+    "pattern": "B3",
+    "source_conversation_id": "conv_481",
+    "turn": 10
+  },
+  {
+    "text": "พอดีผมอยู่เชียงรายเลยครับเตง สะดวกส่งเป็นพวก Flash Express ให้แทน",
+    "pattern": "D3",
+    "source_conversation_id": "conv_482",
+    "turn": 4
+  },
+  {
+    "text": "ถ้าโอนตอนนี้ผมลดให้อีก 100 บาทเลยนะเตง",
+    "pattern": "C4",
+    "source_conversation_id": "conv_482",
+    "turn": 8
+  },
+  {
+    "text": "รีบโอนหน่อยน้าเตง พอดีมีอีกคิวทักมาถามอยู่",
+    "pattern": "B4",
+    "source_conversation_id": "conv_482",
+    "turn": 10
+  },
+  {
+    "text": "ถ้าส่งแฟลชขอคิดเพิ่ม 80 บาทจ้า",
+    "pattern": "C1",
+    "source_conversation_id": "conv_483",
+    "turn": 6
+  },
+  {
+    "text": "ถ้ารับตอนนี้จริงโอนเลย เดี๋ยวลดราคาตัวกระเป๋าให้อีก 50 บาทเลยจ้า",
+    "pattern": "C4",
+    "source_conversation_id": "conv_483",
+    "turn": 10
+  },
+  {
+    "text": "เรียนลูกค้าผู้มีอุปการคุณ สินค้าดังกล่าวยังมีพร้อมจำหน่ายค่ะ",
+    "pattern": "D2",
+    "source_conversation_id": "conv_484",
+    "turn": 2
+  },
+  {
+    "text": "ไม่มีบริการเก็บเงินปลายทางทุกกรณีค่ะ",
+    "pattern": "B3",
+    "source_conversation_id": "conv_484",
+    "turn": 6
+  },
+  {
+    "text": "ไม่สะดวกนัดเจอรับสินค้าค่ะ จัดส่งผ่านไปรษณีย์ไทย",
+    "pattern": "B2",
+    "source_conversation_id": "conv_484",
+    "turn": 8
+  },
+  {
+    "text": "รูปในโพสต์ลงไว้ชัดเจนหมดแล้วจ้า ถ่ายเพิ่มไม่ได้แล้วน้า",
+    "pattern": "D1",
+    "source_conversation_id": "conv_485",
+    "turn": 4
+  },
+  {
+    "text": "พอดีเค้าจะย้ายบ้านพรุ่งนี้แล้วจ้า ของแพ็กใส่ลังเตรียมขนหมดแล้ว",
+    "pattern": "C3",
+    "source_conversation_id": "conv_485",
+    "turn": 6
+  },
+  {
+    "text": "ถ้าโอนตอนนี้เดี๋ยวลดราคาให้พิเศษเลยจ้า จาก 1500 เหลือ 1200 พอ",
+    "pattern": "C4",
+    "source_conversation_id": "conv_485",
+    "turn": 8
+  },
+  {
+    "text": "โอนด่วนเลยน้าเดี๋ยวคนอื่นตัดหน้า",
+    "pattern": "B4",
+    "source_conversation_id": "conv_485",
+    "turn": 10
+  },
+  {
+    "text": "ไม่สะดวกนัดรับเลยจ้า พอดีงานยุ่งมาก ส่งไปรษณีย์อย่างเดียวเลย",
+    "pattern": "B2",
+    "source_conversation_id": "conv_487",
+    "turn": 6
+  },
+  {
+    "text": "รีบโอนน้ามีคนทักมาถามเยอะมากเดี๋ยวไม่ทัน",
+    "pattern": "B4",
+    "source_conversation_id": "conv_487",
+    "turn": 8
+  },
+  {
+    "text": "ไม่มีเก็บเงินปลายทางจ้า",
+    "pattern": "B3",
+    "source_conversation_id": "conv_488",
+    "turn": 12
+  },
+  {
+    "text": "เรียนลูกค้าผู้มีอุปการคุณ สินค้าโต๊ะทำงานพับได้ยังมีพร้อมจัดส่งค่ะ",
+    "pattern": "D2",
+    "source_conversation_id": "conv_489",
+    "turn": 2
+  },
+  {
+    "text": "หากจัดส่งในพื้นที่กรุงเทพฯ จะมีค่าบริการพิเศษเพิ่มอีก 50 บาทค่ะ",
+    "pattern": "C1",
+    "source_conversation_id": "conv_489",
+    "turn": 8
+  },
+  {
+    "text": "พอดีเค้าอยู่สงขลาเลยจ้า สะดวกส่งเป็นไปรษณีย์ EMS ให้แทนได้ไหมคะ",
+    "pattern": "D3",
+    "source_conversation_id": "conv_490",
+    "turn": 4
+  },
+  {
+    "text": "เค้าแพ็กห่อบับเบิ้ลใส่กล่องไว้รอส่งแล้ว ถ่ายเพิ่มไม่ได้แล้วน้า",
+    "pattern": "D1",
+    "source_conversation_id": "conv_490",
+    "turn": 6
+  },
+  {
+    "text": "ถ้าเตงตกลงโอนตอนนี้ เค้าลดให้จาก 950 เหลือ 800 ส่งฟรีไปเลยจ้า",
+    "pattern": "C4",
+    "source_conversation_id": "conv_490",
+    "turn": 8
+  },
+  {
+    "text": "รีบตัดสินใจหน่อยน้า พอดีมีอีกคนทักมาถามจะโอนแล้วเหมือนกันจ้า",
+    "pattern": "B4",
+    "source_conversation_id": "conv_490",
+    "turn": 10
+  },
+  {
+    "text": "ไม่สะดวกแกะแล้วครับ แพ็กของลงกล่องเรียบร้อย",
+    "pattern": "D1",
+    "source_conversation_id": "conv_491",
+    "turn": 8
+  },
+  {
+    "text": "พอดีตอนนี้ผมอยู่เชียงใหม่ครับ สะดวกส่งเป็นพวก Flash หรือ EMS",
+    "pattern": "D3",
+    "source_conversation_id": "conv_492",
+    "turn": 4
+  },
+  {
+    "text": "ไม่มีเก็บเงินปลายทางครับ",
+    "pattern": "B3",
+    "source_conversation_id": "conv_492",
+    "turn": 6
+  },
+  {
+    "text": "เลยขอคิดเป็น 3700 นะเตง",
+    "pattern": "C1",
+    "source_conversation_id": "conv_493",
+    "turn": 4
+  },
+  {
+    "text": "ต้องโอนภายใน 10 นาทีนะ ไม่งั้นผมปล่อยคิวถัดไป",
+    "pattern": "B4",
+    "source_conversation_id": "conv_493",
+    "turn": 8
+  },
+  {
+    "text": "เรียนท่านลูกค้าผู้มีอุปการคุณ สินค้ารายการดังกล่าวยังมีอยู่ในคลังสินค้าพร้อมจัดส่ง",
+    "pattern": "D2",
+    "source_conversation_id": "conv_494",
+    "turn": 2
+  },
+  {
+    "text": "ไม่สะดวกนัดเจอเลยครับ ขอส่งไปรษณีย์อย่างเดียวนะ",
+    "pattern": "B2",
+    "source_conversation_id": "conv_495",
+    "turn": 4
+  },
+  {
+    "text": "ถ้าโอนเต็มจำนวนตอนนี้เลย ผมลดให้เหลือ 1000 ถ้วนส่งฟรี",
+    "pattern": "C4",
+    "source_conversation_id": "conv_495",
+    "turn": 8
+  },
+  {
+    "text": "ตอนนี้ขอขาย 1800 นะครับ พอดีมีค่าทำความสะอาดเพิ่ม",
+    "pattern": "B1",
+    "source_conversation_id": "conv_496",
+    "turn": 4
+  },
+  {
+    "text": "ต้องรีบใช้เงินจ่ายค่าห้องคืนนี้แล้วจริง ๆ",
+    "pattern": "C3",
+    "source_conversation_id": "conv_496",
+    "turn": 8
+  },
+  {
+    "text": "พอดีผมอยู่ยะลาเลยครับ ไกลมาก สะดวกส่ง EMS",
+    "pattern": "D3",
+    "source_conversation_id": "conv_497",
+    "turn": 8
+  },
+  {
+    "text": "ต้องโอนตอนนี้เลยครับ มีคนทักมาอีก 3 คิว",
+    "pattern": "B4",
+    "source_conversation_id": "conv_498",
+    "turn": 8
+  },
+  {
+    "text": "ขอคิดค่าส่งเพิ่ม 150 ละกัน พอดีกล่องมันใหญ่",
+    "pattern": "C1",
+    "source_conversation_id": "conv_499",
+    "turn": 4
+  },
+  {
+    "text": "ถ่ายเพิ่มไม่ได้แล้วครับ แพ็กของปิดกล่องติดเทปไปเรียบร้อย",
+    "pattern": "D1",
+    "source_conversation_id": "conv_499",
+    "turn": 8
+  },
+  {
+    "text": "ผมอยู่ขอนแก่นครับตอนนี้ สะดวกส่ง Kerry ให้มากกว่า",
+    "pattern": "D3",
+    "source_conversation_id": "conv_500",
+    "turn": 4
+  },
+  {
+    "text": "ถ้าพี่โอนวันนี้เลย เดี๋ยวลดให้เหลือ 7200",
+    "pattern": "C4",
+    "source_conversation_id": "conv_500",
+    "turn": 8
+  }
+]
