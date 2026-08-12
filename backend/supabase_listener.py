@@ -136,23 +136,35 @@ def _run_prefilter(all_messages: list[dict], unprocessed_ids: list[str]) -> PreF
 
 def _mark_skipped(
     supabase: Client,
+    room_id: str,
     all_messages: list[dict],
     unprocessed_ids: list[str],
     previous_risk: int,
+    room_never_analyzed: bool,
 ) -> None:
     """
     Mark ข้อความว่าประมวลผลแล้ว โดยไม่เรียก Qwen (กรณี pre-filter ตัดสินว่าไม่ต้องวิเคราะห์)
 
     คง risk_percentage เดิมของห้องไว้ (risk สะสมขึ้นอย่างเดียว ไม่มีวันลด)
-    และไม่แตะตาราง chatrooms เลย เพราะคะแนนห้องไม่เปลี่ยน
+
+    กรณีห้องที่ "ยังไม่เคยถูกวิเคราะห์เลย" (risk_percentage = -1) ต้องอัปเดต chatrooms ด้วย
+    ไม่งั้นแชทที่ปกติทั้งหมดจะค้างที่ -1 ตลอดไป และ frontend จะขึ้น "ยังไม่มีข้อมูลเพียงพอ"
+    ทั้งที่ระบบตรวจแล้วจริงๆ — ผู้ใช้จะแยกไม่ออกว่าระบบทำงานอยู่หรือพัง
+
+    ส่วนห้องที่เคยมีคะแนนแล้ว จะไม่แตะ chatrooms เลย เพื่อไม่ให้ detected_flags/scam_pattern
+    ที่ Qwen เคยวิเคราะห์ไว้ถูกล้างทิ้ง
 
     Args:
         supabase: Supabase client
+        room_id: ID ของห้อง
         all_messages: ข้อความทั้งหมดในห้อง (ใช้คำนวณเลข turn)
         unprocessed_ids: id ของข้อความที่ต้อง mark
         previous_risk: risk score ปัจจุบันของห้อง ที่จะคงไว้
+        room_never_analyzed: True ถ้าห้องนี้ยังไม่เคยถูกวิเคราะห์ (risk_percentage < 0)
     """
     turn_by_id = {msg["id"]: i + 1 for i, msg in enumerate(all_messages)}
+    skip_reason = "ยังไม่พบสัญญาณความเสี่ยงในบทสนทนานี้"
+
     for msg_id in unprocessed_ids:
         (
             supabase.table("messages")
@@ -160,13 +172,29 @@ def _mark_skipped(
                 {
                     "processed": True,
                     "risk_percentage": previous_risk,
-                    "reasoning": "ข้ามการวิเคราะห์ — pre-filter ไม่พบสัญญาณเสี่ยงในข้อความนี้",
+                    "reasoning": skip_reason,
                     "detected_flags": [],
                     "scam_pattern": None,
                     "turn": turn_by_id.get(msg_id),
                 }
             )
             .eq("id", msg_id)
+            .execute()
+        )
+
+    if room_never_analyzed:
+        (
+            supabase.table("chatrooms")
+            .upsert(
+                {
+                    "id": room_id,
+                    "risk_percentage": previous_risk,
+                    "reasoning": skip_reason,
+                    "detected_flags": [],
+                    "scam_pattern": None,
+                    "last_updated": datetime.now(timezone.utc).isoformat(),
+                }
+            )
             .execute()
         )
 
@@ -189,10 +217,12 @@ def _process_room(supabase: Client, room_id: str, unprocessed_ids: list[str]) ->
             .execute()
         )
         previous_risk = 0
+        room_never_analyzed = True  # ห้องที่ risk ยังเป็น -1 = ยังไม่เคยผ่านการวิเคราะห์
         if previous_room.data:
             prev_value = previous_room.data[0].get("risk_percentage", -1)
             if prev_value is not None and prev_value >= 0:
                 previous_risk = prev_value
+                room_never_analyzed = False
 
         # === ดึงข้อความทั้งหมดในห้องเป็น context ===
         all_result = (
@@ -219,7 +249,14 @@ def _process_room(supabase: Client, room_id: str, unprocessed_ids: list[str]) ->
                 f"⏭️ [{room_id}] ข้ามการวิเคราะห์ (pre-filter: {decision.stage}) — "
                 f"{decision.reason} | คง risk เดิมที่ {previous_risk}%"
             )
-            _mark_skipped(supabase, all_messages, unprocessed_ids, previous_risk)
+            _mark_skipped(
+                supabase,
+                room_id,
+                all_messages,
+                unprocessed_ids,
+                previous_risk,
+                room_never_analyzed,
+            )
             return
 
         logger.info(

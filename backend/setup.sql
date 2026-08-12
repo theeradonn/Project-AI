@@ -11,6 +11,9 @@
 -- ALTER TABLE messages ADD COLUMN IF NOT EXISTS turn INTEGER;
 -- ALTER TABLE chatrooms ADD COLUMN IF NOT EXISTS detected_flags JSONB DEFAULT '[]'::jsonb;
 -- ALTER TABLE chatrooms ADD COLUMN IF NOT EXISTS scam_pattern TEXT;
+-- >>> สำหรับฟีเจอร์ "อ่านแล้ว" (read receipts): <<<
+-- ALTER TABLE chatrooms ADD COLUMN IF NOT EXISTS buyer_last_read_at TIMESTAMPTZ;
+-- ALTER TABLE chatrooms ADD COLUMN IF NOT EXISTS seller_last_read_at TIMESTAMPTZ;
 
 -- 1. ตารางข้อความแชท
 CREATE TABLE IF NOT EXISTS messages (
@@ -35,6 +38,10 @@ CREATE TABLE IF NOT EXISTS chatrooms (
   reasoning TEXT DEFAULT 'ยังไม่มีข้อมูลเพียงพอสำหรับการวิเคราะห์',
   detected_flags JSONB DEFAULT '[]'::jsonb,
   scam_pattern TEXT,
+  -- เวลาที่แต่ละฝ่ายอ่านแชทล่าสุด — ใช้แสดงสถานะ "อ่านแล้ว"
+  -- ข้อความของเราถือว่าถูกอ่านแล้ว ถ้า created_at <= เวลาอ่านล่าสุดของอีกฝ่าย
+  buyer_last_read_at TIMESTAMPTZ,
+  seller_last_read_at TIMESTAMPTZ,
   last_updated TIMESTAMPTZ DEFAULT NOW()
 );
 
