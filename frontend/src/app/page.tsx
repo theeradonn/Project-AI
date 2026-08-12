@@ -47,21 +47,57 @@ function LandingPage({
   const [roomCodeError, setRoomCodeError] = useState("");
 
   // ==========================================
-  // Buyer: สร้างห้องใหม่ผ่าน Backend API
+  // Buyer: สร้างห้องใหม่ผ่าน Supabase โดยตรง
+  //
+  // ทำที่ฝั่ง frontend แทนการเรียก FastAPI เพราะเมื่อ deploy ขึ้น Vercel แล้ว
+  // เว็บจะเรียก backend ที่รันบนเครื่องผู้ใช้ (localhost) ไม่ได้
+  // logic เหมือน backend/main.py::create_room() ทุกประการ
   // ==========================================
+
+  /** สุ่ม Room Code 6 ตัว จาก A-Z และ 0-9 (เช่น AB12CD) */
+  const generateRoomCode = (length = 6): string => {
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    return Array.from(
+      { length },
+      () => chars[Math.floor(Math.random() * chars.length)]
+    ).join("");
+  };
+
   const handleCreateRoom = async () => {
     if (!name.trim()) return;
     setIsCreatingRoom(true);
     try {
-      const res = await fetch("http://localhost:8000/rooms", {
-        method: "POST",
+      const { supabase } = await import("@/lib/supabase");
+
+      // สุ่มจนกว่าจะได้รหัสที่ไม่ซ้ำ (โอกาสชนต่ำมาก แต่กันไว้เหมือนฝั่ง backend)
+      let roomId = "";
+      for (let attempt = 0; attempt < 10; attempt++) {
+        const candidate = generateRoomCode();
+        const { data } = await supabase
+          .from("chatrooms")
+          .select("id")
+          .eq("id", candidate)
+          .maybeSingle();
+
+        if (!data) {
+          roomId = candidate;
+          break;
+        }
+      }
+      if (!roomId) throw new Error("สุ่มรหัสห้องที่ไม่ซ้ำไม่สำเร็จ");
+
+      const { error } = await supabase.from("chatrooms").insert({
+        id: roomId,
+        risk_percentage: -1,
+        reasoning: "ยังไม่มีข้อมูลเพียงพอสำหรับการวิเคราะห์",
+        last_updated: new Date().toISOString(),
       });
-      if (!res.ok) throw new Error("สร้างห้องไม่สำเร็จ");
-      const data = await res.json();
-      setCreatedRoomCode(data.room_id);
+      if (error) throw error;
+
+      setCreatedRoomCode(roomId);
     } catch (err) {
       console.error(err);
-      alert("ไม่สามารถสร้างห้องแชทได้ กรุณาตรวจสอบว่า Backend กำลังทำงานอยู่");
+      alert("ไม่สามารถสร้างห้องแชทได้ กรุณาลองใหม่อีกครั้ง");
     } finally {
       setIsCreatingRoom(false);
     }
@@ -116,33 +152,33 @@ function LandingPage({
   };
 
   return (
-    <div className="min-h-[100dvh] bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 flex items-center justify-center p-4">
+    <div className="min-h-[100dvh] bg-gradient-to-br from-[#0a0908] via-[#12100c] to-[#0a0908] flex items-center justify-center p-4">
       {/* Background Decorations */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-yellow-600/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl" />
       </div>
 
       {/* Card */}
       <div className="relative w-full max-w-md">
-        <div className="bg-slate-900/70 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl shadow-black/20 p-6 sm:p-8">
+        <div className="bg-[#12100c]/80 backdrop-blur-xl border border-amber-500/15 rounded-2xl shadow-2xl shadow-black/20 p-6 sm:p-8">
           {/* Logo */}
           <div className="flex flex-col items-center mb-8">
-            <div className="flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 shadow-lg shadow-indigo-500/25 mb-4">
+            <div className="flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-300 to-yellow-600 shadow-lg shadow-amber-500/20 mb-4">
               <span className="text-3xl">🛡️</span>
             </div>
             <h1 className="text-2xl font-bold text-white tracking-tight">
               SafeTrade
             </h1>
-            <p className="text-sm text-slate-400 mt-1 text-center">
+            <p className="text-sm text-stone-400 mt-1 text-center">
               AI-Powered Fraud Risk Analysis for Online Trading
             </p>
           </div>
 
           {/* Name Input */}
           <div className="mb-6">
-            <label className="block text-xs font-medium text-slate-400 mb-2">
+            <label className="block text-xs font-medium text-stone-400 mb-2">
               ชื่อของคุณ
             </label>
             <input
@@ -150,13 +186,13 @@ function LandingPage({
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="ใส่ชื่อที่จะแสดงในแชท..."
-              className="w-full bg-slate-800/60 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500/50 transition-all duration-200"
+              className="w-full bg-stone-800/60 border border-amber-500/15 rounded-xl px-4 py-3 text-sm text-white placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-amber-500/40 focus:border-amber-500/40 transition-all duration-200"
             />
           </div>
 
           {/* Role Selection */}
           <div className="mb-6">
-            <label className="block text-xs font-medium text-slate-400 mb-3">
+            <label className="block text-xs font-medium text-stone-400 mb-3">
               เลือกบทบาทของคุณ
             </label>
             <div className="grid grid-cols-2 gap-3">
@@ -171,27 +207,27 @@ function LandingPage({
                 }}
                 className={`group relative flex flex-col items-center gap-2 p-4 rounded-xl border transition-all duration-300 ${
                   selectedRole === "buyer"
-                    ? "bg-blue-500/15 border-blue-500/50 ring-2 ring-blue-500/30 shadow-lg shadow-blue-500/10"
-                    : "bg-slate-800/40 border-white/5 hover:bg-slate-800/60 hover:border-white/10"
+                    ? "bg-amber-500/15 border-amber-500/50 ring-2 ring-amber-500/30 shadow-lg shadow-amber-500/10"
+                    : "bg-stone-800/40 border-amber-500/10 hover:bg-stone-800/60 hover:border-amber-500/15"
                 }`}
               >
                 <div
                   className={`w-12 h-12 rounded-xl flex items-center justify-center text-xl transition-all duration-300 ${
                     selectedRole === "buyer"
-                      ? "bg-gradient-to-br from-blue-500 to-cyan-500 shadow-lg shadow-blue-500/25 scale-110"
-                      : "bg-slate-700/60 group-hover:bg-slate-700"
+                      ? "bg-gradient-to-br from-amber-300 to-yellow-500 shadow-lg shadow-amber-500/20 scale-110"
+                      : "bg-stone-700/60 group-hover:bg-stone-700"
                   }`}
                 >
                   🛒
                 </div>
                 <span
                   className={`text-sm font-semibold transition-colors ${
-                    selectedRole === "buyer" ? "text-blue-400" : "text-slate-300"
+                    selectedRole === "buyer" ? "text-amber-300" : "text-stone-300"
                   }`}
                 >
                   ผู้ซื้อ
                 </span>
-                <span className="text-[10px] text-slate-500">Buyer</span>
+                <span className="text-[10px] text-stone-500">Buyer</span>
               </button>
 
               {/* Seller Card */}
@@ -205,15 +241,15 @@ function LandingPage({
                 }}
                 className={`group relative flex flex-col items-center gap-2 p-4 rounded-xl border transition-all duration-300 ${
                   selectedRole === "seller"
-                    ? "bg-violet-500/15 border-violet-500/50 ring-2 ring-violet-500/30 shadow-lg shadow-violet-500/10"
-                    : "bg-slate-800/40 border-white/5 hover:bg-slate-800/60 hover:border-white/10"
+                    ? "bg-yellow-600/15 border-yellow-600/50 ring-2 ring-yellow-600/30 shadow-lg shadow-yellow-600/10"
+                    : "bg-stone-800/40 border-amber-500/10 hover:bg-stone-800/60 hover:border-amber-500/15"
                 }`}
               >
                 <div
                   className={`w-12 h-12 rounded-xl flex items-center justify-center text-xl transition-all duration-300 ${
                     selectedRole === "seller"
-                      ? "bg-gradient-to-br from-violet-500 to-purple-600 shadow-lg shadow-violet-500/25 scale-110"
-                      : "bg-slate-700/60 group-hover:bg-slate-700"
+                      ? "bg-gradient-to-br from-stone-600 to-stone-700 shadow-lg shadow-stone-900/40 scale-110"
+                      : "bg-stone-700/60 group-hover:bg-stone-700"
                   }`}
                 >
                   🏪
@@ -221,13 +257,13 @@ function LandingPage({
                 <span
                   className={`text-sm font-semibold transition-colors ${
                     selectedRole === "seller"
-                      ? "text-violet-400"
-                      : "text-slate-300"
+                      ? "text-yellow-500"
+                      : "text-stone-300"
                   }`}
                 >
                   ผู้ขาย
                 </span>
-                <span className="text-[10px] text-slate-500">Seller</span>
+                <span className="text-[10px] text-stone-500">Seller</span>
               </button>
             </div>
           </div>
@@ -241,32 +277,32 @@ function LandingPage({
                   id="create-room-btn"
                   onClick={handleCreateRoom}
                   disabled={!name.trim() || isCreatingRoom}
-                  className="w-full py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-blue-500 to-cyan-600 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="w-full py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-amber-300 to-yellow-600 shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   {isCreatingRoom ? "⏳ กำลังสร้างห้อง..." : "➕ สร้างห้องแชทใหม่"}
                 </button>
               ) : (
                 /* แสดง Room Code + ปุ่ม copy + ปุ่มเข้าร่วม */
                 <div className="space-y-3">
-                  <div className="rounded-xl bg-slate-800/60 border border-blue-500/30 p-4">
-                    <p className="text-xs text-slate-400 mb-2 text-center">
+                  <div className="rounded-xl bg-stone-800/60 border border-amber-500/30 p-4">
+                    <p className="text-xs text-stone-400 mb-2 text-center">
                       📋 Room Code — แชร์รหัสนี้ให้ผู้ขาย
                     </p>
                     <div className="flex items-center justify-center gap-3">
-                      <code className="text-2xl font-bold tracking-[0.3em] text-blue-300 font-mono">
+                      <code className="text-2xl font-bold tracking-[0.3em] text-amber-200 font-mono">
                         {createdRoomCode}
                       </code>
                       <button
                         id="copy-room-code-btn"
                         onClick={handleCopyCode}
                         title="คัดลอก Room Code"
-                        className="p-2 rounded-lg bg-slate-700/60 hover:bg-blue-500/20 text-slate-400 hover:text-blue-400 border border-white/5 hover:border-blue-500/30 transition-all duration-200"
+                        className="p-2 rounded-lg bg-stone-700/60 hover:bg-amber-500/20 text-stone-400 hover:text-amber-300 border border-amber-500/10 hover:border-amber-500/30 transition-all duration-200"
                       >
                         {copied ? "✅" : "📋"}
                       </button>
                     </div>
                     {copied && (
-                      <p className="text-[10px] text-blue-400 text-center mt-1 animate-in fade-in duration-200">
+                      <p className="text-[10px] text-amber-300 text-center mt-1 animate-in fade-in duration-200">
                         คัดลอกแล้ว!
                       </p>
                     )}
@@ -275,7 +311,7 @@ function LandingPage({
                   <button
                     id="buyer-join-btn"
                     onClick={handleBuyerJoin}
-                    className="w-full py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-indigo-500 to-purple-600 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+                    className="w-full py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-amber-300 to-yellow-600 shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
                   >
                     เข้าร่วมห้องแชท →
                   </button>
@@ -288,7 +324,7 @@ function LandingPage({
           {selectedRole === "seller" && (
             <div className="mb-6 space-y-3">
               <div>
-                <label className="block text-xs font-medium text-slate-400 mb-2">
+                <label className="block text-xs font-medium text-stone-400 mb-2">
                   Room Code (รับจากผู้ซื้อ)
                 </label>
                 <input
@@ -304,10 +340,10 @@ function LandingPage({
                   }}
                   placeholder="เช่น AB12CD"
                   maxLength={6}
-                  className={`w-full bg-slate-800/60 border rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 font-mono tracking-widest text-center focus:outline-none focus:ring-2 transition-all duration-200 ${
+                  className={`w-full bg-stone-800/60 border rounded-xl px-4 py-3 text-sm text-white placeholder-stone-500 font-mono tracking-widest text-center focus:outline-none focus:ring-2 transition-all duration-200 ${
                     roomCodeError
                       ? "border-red-500/50 focus:ring-red-500/30"
-                      : "border-white/10 focus:ring-violet-500/50 focus:border-violet-500/50"
+                      : "border-amber-500/15 focus:ring-yellow-600/40 focus:border-yellow-600/50"
                   }`}
                 />
                 {roomCodeError && (
@@ -321,7 +357,7 @@ function LandingPage({
                 id="seller-join-btn"
                 onClick={handleSellerJoin}
                 disabled={!roomCodeInput.trim() || !name.trim()}
-                className="w-full py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-violet-500 to-purple-600 shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="w-full py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-stone-600 to-stone-700 shadow-lg shadow-stone-900/40 hover:shadow-yellow-600/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
                 เข้าร่วมห้องแชท →
               </button>
@@ -329,7 +365,7 @@ function LandingPage({
           )}
 
           {/* Footer Note */}
-          <p className="text-center text-[10px] text-slate-600 mt-2">
+          <p className="text-center text-[10px] text-stone-600 mt-2">
             ระบบจะวิเคราะห์ความเสี่ยงด้วย AI อัตโนมัติขณะที่คุณสนทนา
           </p>
         </div>

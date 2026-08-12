@@ -28,6 +28,9 @@ interface Message {
   processed: boolean;
   risk_percentage?: number;
   reasoning?: string;
+  /** รายการ pattern ที่ตรวจพบใน turn นี้ เช่น "[B3] ปฏิเสธการเก็บเงินปลายทาง (+20): ..." */
+  detected_flags?: string[];
+  scam_pattern?: string | null;
 }
 
 interface RiskData {
@@ -91,8 +94,21 @@ export default function ChatRoom({
   const [isSending, setIsSending] = useState(false);
   const [isResetting, setIsResetting] = useState(false);
 
+  /** อีกฝ่ายกำลังพิมพ์อยู่ไหม (มาจาก broadcast ไม่ได้เก็บลง DB) */
+  const [isOtherTyping, setIsOtherTyping] = useState(false);
+  /** เวลาที่อีกฝ่ายอ่านแชทล่าสุด — ใช้ตัดสินว่าข้อความไหนของเราถูกอ่านแล้ว */
+  const [otherLastReadAt, setOtherLastReadAt] = useState<string | null>(null);
+
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  /** channel สำหรับส่งสัญญาณ "กำลังพิมพ์" */
+  const typingChannelRef = useRef<ReturnType<typeof supabase.channel> | null>(null);
+  /** timer ซ่อน indicator เมื่ออีกฝ่ายหยุดพิมพ์ */
+  const typingTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  /** กันไม่ให้ยิง broadcast ถี่เกินไปตอนพิมพ์รัว */
+  const lastTypingSentRef = useRef<number>(0);
+
+  const otherRole = userRole === "buyer" ? "seller" : "buyer";
 
   // ฟังก์ชันรีเซ็ตห้องแชท (ลบข้อความ และตั้งค่าความเสี่ยงเริ่มต้นใหม่)
   const handleResetChat = async () => {
@@ -208,6 +224,9 @@ export default function ChatRoom({
           reasoning: data.reasoning ?? "ยังไม่มีข้อมูลเพียงพอ",
           last_updated: data.last_updated,
         });
+        setOtherLastReadAt(
+          (userRole === "buyer" ? data.seller_last_read_at : data.buyer_last_read_at) ?? null
+        );
       }
     };
     fetchRisk();
@@ -232,6 +251,9 @@ export default function ChatRoom({
             reasoning: (updated.reasoning as string) ?? "ไม่มีเหตุผลระบุ",
             last_updated: (updated.last_updated as string) ?? null,
           });
+          // อีกฝ่ายเพิ่งอ่านแชท → อัปเดตสถานะ "อ่านแล้ว"
+          const readKey = userRole === "buyer" ? "seller_last_read_at" : "buyer_last_read_at";
+          setOtherLastReadAt((updated[readKey] as string) ?? null);
         }
       )
       .subscribe();
@@ -239,7 +261,84 @@ export default function ChatRoom({
     return () => {
       supabase.removeChannel(channel);
     };
-  }, [roomId]);
+  }, [roomId, userRole]);
+
+  // ==========================================
+  // Listener 3: "กำลังพิมพ์" — ใช้ Broadcast (ไม่แตะ DB เพราะเป็นข้อมูลชั่วคราว)
+  // ==========================================
+  useEffect(() => {
+    const channel = supabase.channel(`typing:${roomId}`, {
+      config: { broadcast: { self: false } }, // ไม่รับ event ของตัวเอง
+    });
+
+    channel
+      .on("broadcast", { event: "typing" }, (payload) => {
+        // สนใจเฉพาะตอนอีกฝ่ายพิมพ์ (ไม่ใช่ตัวเองจากอีกแท็บ)
+        if ((payload.payload as { role?: string })?.role !== otherRole) return;
+
+        setIsOtherTyping(true);
+        if (typingTimeoutRef.current) clearTimeout(typingTimeoutRef.current);
+        // ถ้าไม่มีสัญญาณใหม่ภายใน 2.5 วิ ถือว่าหยุดพิมพ์แล้ว
+        typingTimeoutRef.current = setTimeout(() => setIsOtherTyping(false), 2500);
+      })
+      .subscribe();
+
+    typingChannelRef.current = channel;
+
+    return () => {
+      if (typingTimeoutRef.current) clearTimeout(typingTimeoutRef.current);
+      supabase.removeChannel(channel);
+      typingChannelRef.current = null;
+    };
+  }, [roomId, otherRole]);
+
+  /** ส่งสัญญาณว่ากำลังพิมพ์ (ยิงไม่เกิน 1 ครั้ง/วินาที) */
+  const broadcastTyping = useCallback(() => {
+    const now = Date.now();
+    if (now - lastTypingSentRef.current < 1000) return;
+    lastTypingSentRef.current = now;
+
+    typingChannelRef.current?.send({
+      type: "broadcast",
+      event: "typing",
+      payload: { role: userRole },
+    });
+  }, [userRole]);
+
+  // ==========================================
+  // Read Receipts — บันทึกว่าเราอ่านถึงเมื่อไหร่
+  // ==========================================
+  const markAsRead = useCallback(async () => {
+    const column = userRole === "buyer" ? "buyer_last_read_at" : "seller_last_read_at";
+    const { error } = await supabase
+      .from("chatrooms")
+      .update({ [column]: new Date().toISOString() })
+      .eq("id", roomId);
+
+    // ถ้ายังไม่ได้รัน migration เพิ่มคอลัมน์ จะ error ตรงนี้ — ปล่อยผ่านไม่ให้แอปพัง
+    if (error) {
+      console.warn(
+        "อัปเดตสถานะ 'อ่านแล้ว' ไม่สำเร็จ (อาจยังไม่ได้เพิ่มคอลัมน์ใน Supabase):",
+        error.message
+      );
+    }
+  }, [roomId, userRole]);
+
+  // อ่านแล้วเมื่อ: เปิดห้อง / มีข้อความใหม่เข้ามาขณะเปิดหน้าอยู่ / กลับมาโฟกัสหน้าต่าง
+  useEffect(() => {
+    if (typeof document !== "undefined" && document.visibilityState === "hidden") return;
+    markAsRead();
+  }, [messages.length, markAsRead]);
+
+  useEffect(() => {
+    const onFocus = () => markAsRead();
+    window.addEventListener("focus", onFocus);
+    document.addEventListener("visibilitychange", onFocus);
+    return () => {
+      window.removeEventListener("focus", onFocus);
+      document.removeEventListener("visibilitychange", onFocus);
+    };
+  }, [markAsRead]);
 
   // ==========================================
   // Send Message
@@ -276,6 +375,16 @@ export default function ChatRoom({
   // ==========================================
   // Render Helpers
   // ==========================================
+  /** id ของข้อความ "ล่าสุดของเรา" ที่อีกฝ่ายอ่านแล้ว — ใช้ติดป้าย "อ่านแล้ว" จุดเดียว */
+  const lastReadOwnMessageId = (() => {
+    if (!otherLastReadAt) return null;
+    const readAt = new Date(otherLastReadAt).getTime();
+    const ownRead = messages.filter(
+      (m) => m.sender === userRole && new Date(m.created_at).getTime() <= readAt
+    );
+    return ownRead.length ? ownRead[ownRead.length - 1].id : null;
+  })();
+
   const riskLevel = getRiskLevel(riskData.risk_percentage);
   const riskGradient = getRiskGradient(riskData.risk_percentage);
   const riskBarBg = getRiskBarBg(riskData.risk_percentage);
@@ -294,27 +403,65 @@ export default function ChatRoom({
     }
   };
 
+  /** ป้ายวันที่สำหรับคั่นกลางแชท — วันนี้/เมื่อวาน หรือวันที่เต็ม */
+  const formatDateLabel = (isoString: string | null): string => {
+    if (!isoString) return "";
+    try {
+      const date = new Date(isoString);
+      const today = new Date();
+      const yesterday = new Date(today);
+      yesterday.setDate(today.getDate() - 1);
+
+      const sameDay = (a: Date, b: Date) =>
+        a.getFullYear() === b.getFullYear() &&
+        a.getMonth() === b.getMonth() &&
+        a.getDate() === b.getDate();
+
+      if (sameDay(date, today)) return "วันนี้";
+      if (sameDay(date, yesterday)) return "เมื่อวาน";
+      return date.toLocaleDateString("th-TH", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      });
+    } catch {
+      return "";
+    }
+  };
+
+  /** เช็คว่าข้อความ 2 อันอยู่คนละวันหรือไม่ (ใช้ตัดสินว่าต้องแทรกป้ายวันที่ไหม) */
+  const isDifferentDay = (a: string | null, b: string | null): boolean => {
+    if (!a || !b) return false;
+    const d1 = new Date(a);
+    const d2 = new Date(b);
+    return (
+      d1.getFullYear() !== d2.getFullYear() ||
+      d1.getMonth() !== d2.getMonth() ||
+      d1.getDate() !== d2.getDate()
+    );
+  };
+
   // ==========================================
   // JSX
   // ==========================================
   return (
-    <div className="flex flex-col h-[100dvh] bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+    <div className="flex flex-col h-[100dvh] bg-gradient-to-br from-[#0a0908] via-[#12100c] to-[#0a0908]">
       {/* ====== HEADER + RISK MONITOR ====== */}
-      <header className="shrink-0 border-b border-white/10 bg-slate-900/80 backdrop-blur-xl">
+      <header className="shrink-0 border-b border-amber-500/10 bg-[#12100c]/85 backdrop-blur-xl">
         {/* Title Bar */}
         <div className="flex items-center justify-between px-4 sm:px-6 py-3">
           <div className="flex items-center gap-3">
-            <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 shadow-lg shadow-indigo-500/25">
+            <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-amber-300 to-yellow-600 shadow-lg shadow-amber-500/20">
               <span className="text-lg">🛡️</span>
             </div>
             <div>
-              <h1 className="text-base font-bold text-white tracking-tight">
+              <h1 className="text-base font-bold tracking-tight bg-gradient-to-r from-amber-200 to-yellow-500 bg-clip-text text-transparent">
                 SafeTrade
               </h1>
               <div className="flex items-center gap-1.5 mt-0.5">
-                <p className="text-xs text-slate-400">AI-Powered Fraud Detection</p>
-                <span className="text-slate-600 text-xs">·</span>
-                <code className="text-xs text-indigo-400/80 font-mono tracking-wider">{roomId}</code>
+                <p className="text-xs text-stone-400">AI-Powered Fraud Detection</p>
+                <span className="text-stone-600 text-xs">·</span>
+                <code className="text-xs text-amber-400/80 font-mono tracking-wider">{roomId}</code>
               </div>
             </div>
           </div>
@@ -325,7 +472,7 @@ export default function ChatRoom({
             <button
               onClick={handleResetChat}
               disabled={isResetting}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-800 hover:bg-red-500/20 text-slate-300 hover:text-red-400 border border-white/10 hover:border-red-500/30 transition-all duration-200 disabled:opacity-50"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-stone-800/80 hover:bg-red-500/20 text-stone-300 hover:text-red-400 border border-amber-500/15 hover:border-red-500/30 transition-all duration-200 disabled:opacity-50"
               title="ล้างข้อความทั้งหมดและรีเซ็ตการประเมิน"
             >
               <span>{isResetting ? "⏳" : "🔄"}</span>
@@ -336,19 +483,19 @@ export default function ChatRoom({
             <div
               className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold ${
                 userRole === "buyer"
-                  ? "bg-blue-500/15 text-blue-400 ring-1 ring-blue-500/30"
-                  : "bg-violet-500/15 text-violet-400 ring-1 ring-violet-500/30"
+                  ? "bg-amber-500/15 text-amber-300 ring-1 ring-amber-500/30"
+                  : "bg-yellow-600/15 text-yellow-500 ring-1 ring-yellow-600/30"
               }`}
             >
               <span className="relative flex h-2 w-2">
                 <span
                   className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${
-                    userRole === "buyer" ? "bg-blue-400" : "bg-violet-400"
+                    userRole === "buyer" ? "bg-amber-400" : "bg-yellow-500"
                   }`}
                 />
                 <span
                   className={`relative inline-flex rounded-full h-2 w-2 ${
-                    userRole === "buyer" ? "bg-blue-500" : "bg-violet-500"
+                    userRole === "buyer" ? "bg-amber-400" : "bg-yellow-600"
                   }`}
                 />
               </span>
@@ -357,200 +504,265 @@ export default function ChatRoom({
           </div>
         </div>
 
-        {/* Risk Score Monitor */}
-        <div className="px-4 sm:px-6 pb-3">
-          <div className="rounded-xl bg-slate-800/60 border border-white/5 p-3 sm:p-4">
-            <div className="flex items-center justify-between mb-2">
-              <div className="flex items-center gap-2">
-                <span className="text-sm">{riskLevel.emoji}</span>
-                <span className="text-xs font-medium text-slate-300">
-                  Risk Assessment
-                </span>
+        {/* Risk Score Monitor — แถบเดียวจบ ประหยัดพื้นที่ให้ช่องแชท */}
+        <div className="px-4 pb-3 sm:px-6">
+          <div className="rounded-2xl border border-amber-500/10 bg-stone-900/60 px-3.5 py-2.5">
+            <div className="flex items-center gap-3">
+              <span className="text-base">{riskLevel.emoji}</span>
+
+              <div className="min-w-0 flex-1">
+                <div className="mb-1.5 flex items-center justify-between gap-2">
+                  <span
+                    className={`text-[11px] font-semibold ${
+                      riskLevel.color === "gray"
+                        ? "text-stone-400"
+                        : riskLevel.color === "emerald"
+                          ? "text-emerald-400"
+                          : riskLevel.color === "amber"
+                            ? "text-amber-400"
+                            : riskLevel.color === "orange"
+                              ? "text-orange-400"
+                              : "text-red-400"
+                    }`}
+                  >
+                    {riskLevel.label}
+                  </span>
+                  <p className="truncate text-[11px] text-stone-500">
+                    {riskData.reasoning}
+                  </p>
+                </div>
+
+                <div className={`h-1.5 w-full overflow-hidden rounded-full ${riskBarBg}`}>
+                  <div
+                    className={`h-full rounded-full bg-gradient-to-r ${riskGradient} transition-all duration-1000 ease-out`}
+                    style={{
+                      width: `${riskData.risk_percentage < 0 ? 0 : displayPercentage}%`,
+                    }}
+                  />
+                </div>
               </div>
-              <div className="flex items-baseline gap-1.5">
+
+              <div className="flex shrink-0 items-baseline gap-0.5">
                 <span
-                  className={`text-2xl font-bold tracking-tighter bg-gradient-to-r ${riskGradient} bg-clip-text text-transparent`}
+                  className={`bg-gradient-to-r text-xl font-bold tracking-tight ${riskGradient} bg-clip-text text-transparent`}
                 >
-                  {riskData.risk_percentage < 0 ? "—" : `${displayPercentage}`}
+                  {riskData.risk_percentage < 0 ? "—" : displayPercentage}
                 </span>
                 {riskData.risk_percentage >= 0 && (
-                  <span className="text-xs font-medium text-slate-500">%</span>
+                  <span className="text-[10px] font-medium text-stone-500">%</span>
                 )}
               </div>
-            </div>
-
-            {/* Progress Bar */}
-            <div
-              className={`w-full h-2 rounded-full ${riskBarBg} overflow-hidden`}
-            >
-              <div
-                className={`h-full rounded-full bg-gradient-to-r ${riskGradient} transition-all duration-1000 ease-out`}
-                style={{
-                  width: `${riskData.risk_percentage < 0 ? 0 : displayPercentage}%`,
-                }}
-              />
-            </div>
-
-            {/* Risk Label + Reasoning */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between mt-2 gap-1">
-              <span
-                className={`text-xs font-semibold px-2 py-0.5 rounded-full w-fit ${
-                  riskLevel.color === "gray"
-                    ? "bg-gray-500/15 text-gray-400"
-                    : riskLevel.color === "emerald"
-                      ? "bg-emerald-500/15 text-emerald-400"
-                      : riskLevel.color === "amber"
-                        ? "bg-amber-500/15 text-amber-400"
-                        : riskLevel.color === "orange"
-                          ? "bg-orange-500/15 text-orange-400"
-                          : "bg-red-500/15 text-red-400"
-                }`}
-              >
-                {riskLevel.label}
-              </span>
-              <p className="text-xs text-slate-500 truncate max-w-xs sm:max-w-sm">
-                {riskData.reasoning}
-              </p>
             </div>
           </div>
         </div>
       </header>
 
       {/* ====== MESSAGES AREA ====== */}
-      <main className="flex-1 overflow-y-auto px-4 sm:px-6 py-4 space-y-3 scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-transparent">
+      <main className="flex-1 overflow-y-auto px-3 sm:px-5 py-4 scrollbar-thin">
         {messages.length === 0 ? (
-          <div className="h-full flex flex-col items-center justify-center gap-2 text-slate-500">
-            <span className="text-3xl">💬</span>
-            <p className="text-sm">ยังไม่มีข้อความในห้องนี้ — เริ่มทักทายกันได้เลย</p>
+          <div className="h-full flex flex-col items-center justify-center gap-3 text-stone-500">
+            <div className="w-16 h-16 rounded-full bg-stone-800/60 border border-amber-500/10 flex items-center justify-center text-3xl">
+              💬
+            </div>
+            <p className="text-sm">ยังไม่มีข้อความในห้องนี้</p>
+            <p className="text-xs text-stone-600">เริ่มทักทายกันได้เลย</p>
           </div>
         ) : (
           messages.map((msg, idx) => {
             const isCurrentUser = msg.sender === userRole;
             const isBuyer = msg.sender === "buyer";
-            const showAvatar =
-              idx === 0 || messages[idx - 1].sender !== msg.sender;
+
+            // จัดกลุ่มข้อความที่ส่งติดกันจากคนเดียวกัน (แบบ Messenger)
+            const prev = idx > 0 ? messages[idx - 1] : null;
+            const next = idx < messages.length - 1 ? messages[idx + 1] : null;
+            const isFirstOfGroup = !prev || prev.sender !== msg.sender;
+            const isLastOfGroup = !next || next.sender !== msg.sender;
+
+            // มุมโค้ง: ด้านที่ติดกับข้อความในกลุ่มเดียวกันจะโค้งน้อยลง
+            const tail = isCurrentUser ? "r" : "l";
+            const radius = [
+              "rounded-[18px]",
+              !isFirstOfGroup && (tail === "r" ? "rounded-tr-[5px]" : "rounded-tl-[5px]"),
+              !isLastOfGroup && (tail === "r" ? "rounded-br-[5px]" : "rounded-bl-[5px]"),
+            ]
+              .filter(Boolean)
+              .join(" ");
+
+            // แสดง badge เฉพาะข้อความที่ "ตรวจพบ pattern จริง" เพื่อลดความรก
+            const hasFlags = (msg.detected_flags?.length ?? 0) > 0;
+
+            // แทรกป้ายวันที่เมื่อข้ามวัน (หรือที่ข้อความแรกสุดของแชท)
+            const showDateDivider =
+              !prev || isDifferentDay(prev.created_at, msg.created_at);
 
             return (
-              <div
-                key={msg.id}
-                className={`flex items-end gap-2 ${
-                  isCurrentUser ? "flex-row-reverse" : "flex-row"
-                }`}
-              >
-                {/* Avatar */}
-                {showAvatar ? (
-                  <div
-                    className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-[11px] font-bold shadow-lg ${
-                      isBuyer
-                        ? "bg-gradient-to-br from-blue-500 to-indigo-600 text-white shadow-blue-500/25"
-                        : "bg-gradient-to-br from-violet-500 to-purple-600 text-white shadow-violet-500/25"
-                    }`}
-                  >
-                    {isBuyer ? "ซ" : "ข"}
+              <div key={msg.id}>
+                {showDateDivider && (
+                  <div className="my-5 flex items-center gap-3">
+                    <div className="h-px flex-1 bg-amber-500/10" />
+                    <span className="text-[10px] font-medium text-stone-500">
+                      {formatDateLabel(msg.created_at)}
+                    </span>
+                    <div className="h-px flex-1 bg-amber-500/10" />
                   </div>
-                ) : (
-                  <div className="w-7 shrink-0" />
                 )}
 
-                {/* Message Bubble */}
                 <div
-                  className={`max-w-[75%] sm:max-w-[65%] ${isCurrentUser ? "items-end" : "items-start"}`}
+                  className={`flex items-end gap-2 ${
+                    isFirstOfGroup && !showDateDivider ? "mt-4" : "mt-0.5"
+                  } ${isCurrentUser ? "flex-row-reverse" : "flex-row"}`}
                 >
-                  {/* Sender Name */}
-                  {showAvatar && (
-                    <p
-                      className={`text-[10px] font-medium mb-1 px-1 ${
-                        isCurrentUser ? "text-right" : "text-left"
-                      } ${isBuyer ? "text-blue-400/70" : "text-violet-400/70"}`}
+                {/* Avatar — โผล่เฉพาะข้อความสุดท้ายของกลุ่ม (แบบ Messenger) */}
+                {!isCurrentUser &&
+                  (isLastOfGroup ? (
+                    <div
+                      className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-[11px] font-bold ${
+                        isBuyer
+                          ? "bg-gradient-to-br from-amber-300 to-yellow-600 text-stone-900"
+                          : "bg-gradient-to-br from-stone-600 to-stone-700 text-amber-200"
+                      }`}
                     >
+                      {isBuyer ? "ซ" : "ข"}
+                    </div>
+                  ) : (
+                    <div className="w-7 shrink-0" />
+                  ))}
+
+                <div className={`flex flex-col max-w-[78%] sm:max-w-[62%] ${isCurrentUser ? "items-end" : "items-start"}`}>
+                  {/* ชื่อผู้ส่ง — เฉพาะข้อความแรกของกลุ่ม และเฉพาะฝั่งตรงข้าม */}
+                  {isFirstOfGroup && !isCurrentUser && (
+                    <p className="text-[11px] font-medium mb-1 px-2 text-stone-500">
                       {msg.sender_name || (isBuyer ? "ผู้ซื้อ" : "ผู้ขาย")}
                     </p>
                   )}
 
-                  {/* Bubble & Per-Message Risk indicator */}
-                  <div className={`flex items-center gap-2 ${isCurrentUser ? "flex-row-reverse" : "flex-row"}`}>
+                  <div className={`flex items-center gap-1.5 ${isCurrentUser ? "flex-row-reverse" : "flex-row"}`}>
                     {/* Bubble */}
                     <div
-                      className={`relative px-3.5 py-2.5 rounded-2xl text-sm leading-relaxed ${
+                      className={`group/bubble relative px-3.5 py-2 text-[14px] leading-[1.45] break-words ${radius} ${
                         isCurrentUser
-                          ? isBuyer
-                            ? "bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-br-md"
-                            : "bg-gradient-to-br from-violet-600 to-purple-700 text-white rounded-br-md"
-                          : "bg-slate-800/80 text-slate-200 border border-white/5 rounded-bl-md"
+                          ? "bg-gradient-to-br from-amber-300 to-yellow-600 text-stone-900 font-medium"
+                          : "bg-stone-800 text-stone-100 border border-amber-500/5"
                       }`}
                     >
-                      <p>{msg.text}</p>
-                      <p
-                        className={`text-[10px] mt-1 ${
-                          isCurrentUser
-                            ? "text-white/50 text-right"
-                            : "text-slate-500 text-left"
-                        }`}
-                      >
-                        {formatTime(msg.created_at)}
-                      </p>
+                      {msg.text}
                     </div>
 
-                    {/* Per-Message Risk Indicator Badge */}
-                    {msg.processed && msg.risk_percentage !== undefined && msg.risk_percentage >= 0 && (
-                      <div className="group relative flex items-center justify-center shrink-0">
+                    {/* Risk badge — เฉพาะข้อความที่ตรวจพบ pattern */}
+                    {hasFlags && msg.risk_percentage !== undefined && msg.risk_percentage >= 0 && (
+                      <div className="group/risk relative flex shrink-0 items-center justify-center">
                         <span
-                          className={`cursor-help flex items-center justify-center w-5 h-5 rounded-full text-[9px] font-bold border transition-transform duration-200 hover:scale-110 ${
+                          className={`flex cursor-help items-center justify-center rounded-full px-1.5 h-[18px] text-[10px] font-bold transition-transform duration-150 hover:scale-110 ${
                             msg.risk_percentage <= 20
-                              ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/30"
+                              ? "bg-emerald-500/15 text-emerald-400"
                               : msg.risk_percentage <= 50
-                                ? "bg-amber-500/10 text-amber-400 border-amber-500/30"
+                                ? "bg-amber-500/15 text-amber-400"
                                 : msg.risk_percentage <= 80
-                                  ? "bg-orange-500/10 text-orange-400 border-orange-500/30"
-                                  : "bg-red-500/10 text-red-400 border-red-500/30"
+                                  ? "bg-orange-500/15 text-orange-400"
+                                  : "bg-red-500/15 text-red-400"
                           }`}
                         >
-                          {msg.risk_percentage}%
+                          {msg.risk_percentage}
                         </span>
 
-                        {/* Tooltip on hover */}
-                        <div className={`absolute bottom-6 hidden group-hover:block z-50 w-52 p-2.5 rounded-xl bg-slate-900 border border-white/10 shadow-2xl text-[11px] text-slate-300 leading-normal animate-in fade-in duration-200 ${
-                          isCurrentUser ? "right-0" : "left-0"
-                        }`}>
-                          <div className="font-semibold text-white mb-1 flex items-center gap-1.5">
+                        {/* Tooltip */}
+                        <div
+                          className={`invisible absolute bottom-7 z-50 w-60 rounded-xl border border-amber-500/20 bg-stone-900 p-3 text-[11px] leading-relaxed text-stone-300 opacity-0 shadow-2xl transition-all duration-150 group-hover/risk:visible group-hover/risk:opacity-100 ${
+                            isCurrentUser ? "right-0" : "left-0"
+                          }`}
+                        >
+                          <div className="mb-1.5 flex items-center gap-1.5 font-semibold text-white">
                             <span>{getRiskLevel(msg.risk_percentage).emoji}</span>
-                            <span>ความเสี่ยง ณ จุดนี้: {msg.risk_percentage}%</span>
+                            <span>ความเสี่ยงสะสม {msg.risk_percentage}%</span>
                           </div>
-                          <p>{msg.reasoning || "อยู่ระหว่างประมวลผลความเสี่ยง"}</p>
-                          <div className={`absolute bottom-[-5px] w-2.5 h-2.5 bg-slate-900 border-r border-b border-white/10 rotate-45 ${
-                            isCurrentUser ? "right-2" : "left-2"
-                          }`} />
+                          <p className="text-stone-400">
+                            {msg.reasoning || "อยู่ระหว่างประมวลผล"}
+                          </p>
+                          {msg.detected_flags?.map((flag, i) => (
+                            <p key={i} className="mt-1.5 border-t border-amber-500/10 pt-1.5 text-[10px] text-stone-500">
+                              {flag}
+                            </p>
+                          ))}
+                          <div
+                            className={`absolute bottom-[-5px] h-2.5 w-2.5 rotate-45 border-b border-r border-amber-500/20 bg-stone-900 ${
+                              isCurrentUser ? "right-3" : "left-3"
+                            }`}
+                          />
                         </div>
                       </div>
                     )}
+                  </div>
+
+                  {/* เวลาที่ส่ง + สถานะอ่านแล้ว */}
+                  {(isLastOfGroup || msg.id === lastReadOwnMessageId) && (
+                    <span className="mt-1 flex items-center gap-1.5 px-2 text-[10px] tabular-nums text-stone-500">
+                      {formatTime(msg.created_at)}
+                      {msg.id === lastReadOwnMessageId && (
+                        <span className="flex items-center gap-0.5 text-amber-500/80">
+                          <svg viewBox="0 0 16 12" className="h-2.5 w-3.5 fill-none stroke-current stroke-2">
+                            <path d="M1 6.5 4.5 10 10.5 2" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M6.5 8.5 8 10 14.5 2" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                          อ่านแล้ว
+                        </span>
+                      )}
+                    </span>
+                  )}
                   </div>
                 </div>
               </div>
             );
           })
         )}
+        {/* กำลังพิมพ์ — จุดกระพริบ 3 จุดแบบ Messenger */}
+        {isOtherTyping && (
+          <div className="mt-3 flex items-end gap-2">
+            <div
+              className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[11px] font-bold ${
+                otherRole === "buyer"
+                  ? "bg-gradient-to-br from-amber-300 to-yellow-600 text-stone-900"
+                  : "bg-gradient-to-br from-stone-600 to-stone-700 text-amber-200"
+              }`}
+            >
+              {otherRole === "buyer" ? "ซ" : "ข"}
+            </div>
+            <div className="flex items-center gap-1 rounded-[18px] border border-amber-500/5 bg-stone-800 px-3.5 py-3">
+              {[0, 150, 300].map((delay) => (
+                <span
+                  key={delay}
+                  className="h-1.5 w-1.5 animate-bounce rounded-full bg-stone-500"
+                  style={{ animationDelay: `${delay}ms`, animationDuration: "1s" }}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
         <div ref={messagesEndRef} />
       </main>
 
       {/* ====== INPUT AREA ====== */}
-      <footer className="shrink-0 border-t border-white/10 bg-slate-900/80 backdrop-blur-xl p-3 sm:p-4">
+      <footer className="shrink-0 border-t border-amber-500/10 bg-[#12100c]/85 px-3 py-3 backdrop-blur-xl sm:px-5">
         <form
           onSubmit={handleSendMessage}
-          className="flex items-center gap-2 sm:gap-3"
+          className="flex items-end gap-2"
         >
           <input
             ref={inputRef}
             type="text"
             value={newMessage}
-            onChange={(e) => setNewMessage(e.target.value)}
-            placeholder="พิมพ์ข้อความ..."
+            onChange={(e) => {
+              setNewMessage(e.target.value);
+              if (e.target.value.trim()) broadcastTyping();
+            }}
+            placeholder="Aa"
             disabled={isSending}
-            className="flex-1 bg-slate-800/60 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500/50 transition-all duration-200 disabled:opacity-50"
+            className="min-w-0 flex-1 rounded-full border border-amber-500/10 bg-stone-800 px-4 py-2.5 text-[14px] text-stone-100 placeholder-stone-500 transition-all duration-200 focus:border-amber-500/30 focus:outline-none focus:ring-2 focus:ring-amber-500/30 disabled:opacity-50"
           />
           <button
             type="submit"
             disabled={!newMessage.trim() || isSending}
-            className="shrink-0 flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 text-white shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-105 active:scale-95 transition-all duration-200 disabled:opacity-40 disabled:hover:scale-100 disabled:hover:shadow-indigo-500/25"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-amber-300 to-yellow-600 text-stone-900 transition-all duration-200 hover:brightness-110 active:scale-90 disabled:opacity-40 disabled:hover:brightness-100"
           >
             {isSending ? (
               <svg

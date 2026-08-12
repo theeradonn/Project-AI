@@ -2,12 +2,19 @@
 
 /* ==========================================
    SafeTrade — Global Styles
-   Premium dark theme with custom animations
+   Premium black & gold theme with custom animations
    ========================================== */
 
 :root {
-  --background: #020617;
-  --foreground: #e2e8f0;
+  --background: #0a0908;
+  --foreground: #ebe5d9;
+
+  /* โทนทอง — ใช้เป็นสีแบรนด์/chrome (ปุ่ม, บับเบิลตัวเอง, focus ring)
+     แยกจากสีบอกระดับความเสี่ยงซึ่งยังใช้ระบบไฟจราจรเหมือนเดิม */
+  --gold-300: #f0d98c;
+  --gold-400: #e5c15c;
+  --gold-500: #d4a72c;
+  --gold-600: #b8860b;
 }
 
 @theme inline {
@@ -37,12 +44,12 @@ body {
 }
 
 .scrollbar-thin::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.2);
+  background: rgba(212, 167, 44, 0.25);
   border-radius: 3px;
 }
 
 .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-  background: rgba(148, 163, 184, 0.4);
+  background: rgba(212, 167, 44, 0.45);
 }
 
 /* ==========================================
