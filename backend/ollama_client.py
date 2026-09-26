@@ -15,6 +15,7 @@ SafeTrade — Ollama Client Module
 
 import json
 import logging
+import os
 import re
 
 import httpx
@@ -24,9 +25,14 @@ logger = logging.getLogger(__name__)
 # ==========================================
 # Configuration
 # ==========================================
-OLLAMA_BASE_URL = "http://localhost:11434"
-OLLAMA_MODEL = "qwen3:8b"
+OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "qwen3:8b")
 REQUEST_TIMEOUT = 120.0  # วินาที — qwen3:8b อาจใช้เวลาในการ generate
+
+# SYSTEM_PROMPT ยาว ~5,400 token แต่ Ollama default num_ctx = 2,048 → prompt โดนตัดหัวทิ้งเงียบๆ
+# (วัดจริง: prompt_eval_count 2,050 vs 5,671) ส่วนที่หายคือ catalogue ช่วงต้น A1-B1 ทำให้โมเดล
+# ตรวจ pattern กลุ่มนั้นไม่เจอเลย — ต้องตั้งค่าให้ครอบ prompt เต็มเสมอ
+OLLAMA_NUM_CTX = int(os.getenv("OLLAMA_NUM_CTX", "8192"))
 
 
 # ==========================================
@@ -459,10 +465,15 @@ def analyze_risk(messages: list[dict]) -> dict:
         "prompt": prompt,
         "stream": False,
         "format": "json",  # บังคับ Ollama ให้ return JSON format เท่านั้น
+        # Ollama ตั้งแต่ 0.34 ให้ qwen3 คิด (reasoning) เป็นค่าเริ่มต้นถ้าไม่ระบุ — คิดจนหมด num_predict
+        # แล้วคืน response ว่าง ซึ่ง parse_risk_response() ตีเป็น risk 0 แบบเงียบๆ
+        # (/no_think ในข้อความ prompt ไม่พอแล้ว ต้องสั่งผ่าน field นี้)
+        "think": False,
         "options": {
             "temperature": 0.3,   # ค่าต่ำ → ผลลัพธ์สม่ำเสมอ, ลด randomness
             "num_predict": 512,   # จำกัดความยาว — เผื่อพื้นที่สำหรับ matched_patterns หลายรายการ
             "top_p": 0.9,
+            "num_ctx": OLLAMA_NUM_CTX,  # ต้องใส่เสมอ ไม่งั้น default 2,048 ตัด SYSTEM_PROMPT ทิ้ง
         },
     }
 
