@@ -1,0 +1,30 @@
+# SafeTrade — dependencies สำหรับ DPO fine-tuning (train_dpo.py) เท่านั้น
+#
+# แยกจาก backend/requirements.txt และ scripts/requirements.txt เพราะชุดนี้หนักมาก (torch ~2.5GB)
+# และไม่ได้ใช้บนเครื่องที่รัน backend จริง — ติดตั้งเฉพาะบนเครื่อง GPU ที่ใช้เทรน
+#
+# ติดตั้งใน venv แยกเสมอ อย่าลงทับ environment ของ Jupyter kernel:
+#     python -m venv ~/safetrade/venv-dpo
+#     ~/safetrade/venv-dpo/bin/pip install -r requirements-dpo.txt
+#     ~/safetrade/venv-dpo/bin/python train_dpo.py --dry-run
+#
+# หมายเหตุเรื่องเวอร์ชัน: ชุดนี้ pin ไว้เพราะ TRL เปลี่ยน API บ่อย (DPOConfig, processing_class)
+# train_dpo.py ตรวจเวอร์ชันเองตอนเริ่มและปรับให้ได้ระดับหนึ่ง แต่ถ้า image ของคลัสเตอร์มี
+# transformers 5.x ติดมาอยู่แล้วจะชนกับ trl ชุดนี้ — ต้องลงใน venv สะอาดเท่านั้น
+
+--extra-index-url https://download.pytorch.org/whl/cu124
+
+torch==2.6.0
+transformers==4.55.2
+trl==0.21.0
+peft==0.17.0
+accelerate==1.10.0
+datasets==3.6.0
+safetensors>=0.4.5
+sentencepiece
+
+# ใช้ตอนแปลง merged model เป็น GGUF (convert_hf_to_gguf.py เป็น pure Python ไม่ต้องคอมไพล์)
+gguf>=0.10.0
+
+# เร่งการดาวน์โหลด base model 16GB จาก HuggingFace
+huggingface_hub[hf_transfer]>=0.34

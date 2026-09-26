@@ -1,0 +1,68 @@
+{
+  "system_sha256": "e1a73ee5a6d9313547cf7f971104bc5db65b7465f91148a872369e48e036e838",
+  "system_prompt_chars": 10538,
+  "seed": 20250921,
+  "flags": {
+    "holdout_frac": 0.2,
+    "rare_boost": 2,
+    "rare_patterns": "C2,D2",
+    "anchor_frac": 0.2
+  },
+  "counts": {
+    "train_pairs": 1404,
+    "eval_pairs": 225,
+    "by_kind": {
+      "partial": 881,
+      "model_empty": 141,
+      "chosen_empty": 126,
+      "anchor_distractor": 54,
+      "anchor_drop": 109,
+      "anchor_hallucinate": 71
+    }
+  },
+  "fn_by_pattern": {
+    "A1": 86,
+    "A2": 26,
+    "A3": 180,
+    "B1": 38,
+    "B2": 249,
+    "B3": 53,
+    "B4": 17,
+    "C1": 73,
+    "C2": 217,
+    "C3": 45,
+    "C4": 69,
+    "D1": 208,
+    "D2": 108,
+    "D3": 72
+  },
+  "fp_by_pattern": {
+    "A2": 2,
+    "A3": 20,
+    "B1": 26,
+    "B2": 2,
+    "B3": 57,
+    "B4": 37,
+    "C1": 14,
+    "C2": 13,
+    "C3": 1,
+    "C4": 80,
+    "D1": 23,
+    "D2": 1,
+    "D3": 45
+  },
+  "turn_histogram": {
+    "2": 67,
+    "4": 166,
+    "5": 2,
+    "6": 261,
+    "7": 17,
+    "8": 295,
+    "9": 30,
+    "10": 304,
+    "11": 25,
+    "12": 199,
+    "13": 15,
+    "14": 1
+  }
+}
