@@ -1,0 +1,390 @@
+{
+  "summary": {
+    "turns": 578,
+    "conversations": 100,
+    "model_errors": 0,
+    "parse_failures": 0
+  },
+  "model_only": {
+    "patterns": {
+      "per_pattern": {
+        "A1": {
+          "support": 35,
+          "tp": 30,
+          "fp": 0,
+          "fn": 5,
+          "precision": 1.0,
+          "recall": 0.857,
+          "f1": 0.923
+        },
+        "A2": {
+          "support": 30,
+          "tp": 28,
+          "fp": 0,
+          "fn": 2,
+          "precision": 1.0,
+          "recall": 0.933,
+          "f1": 0.966
+        },
+        "A3": {
+          "support": 59,
+          "tp": 48,
+          "fp": 3,
+          "fn": 11,
+          "precision": 0.941,
+          "recall": 0.814,
+          "f1": 0.873
+        },
+        "B1": {
+          "support": 22,
+          "tp": 20,
+          "fp": 11,
+          "fn": 2,
+          "precision": 0.645,
+          "recall": 0.909,
+          "f1": 0.755
+        },
+        "B2": {
+          "support": 62,
+          "tp": 33,
+          "fp": 0,
+          "fn": 29,
+          "precision": 1.0,
+          "recall": 0.532,
+          "f1": 0.695
+        },
+        "B3": {
+          "support": 63,
+          "tp": 56,
+          "fp": 10,
+          "fn": 7,
+          "precision": 0.848,
+          "recall": 0.889,
+          "f1": 0.868
+        },
+        "B4": {
+          "support": 47,
+          "tp": 43,
+          "fp": 12,
+          "fn": 4,
+          "precision": 0.782,
+          "recall": 0.915,
+          "f1": 0.843
+        },
+        "C1": {
+          "support": 22,
+          "tp": 12,
+          "fp": 5,
+          "fn": 10,
+          "precision": 0.706,
+          "recall": 0.545,
+          "f1": 0.615
+        },
+        "C2": {
+          "support": 52,
+          "tp": 0,
+          "fp": 5,
+          "fn": 52,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "C3": {
+          "support": 16,
+          "tp": 8,
+          "fp": 0,
+          "fn": 8,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.667
+        },
+        "C4": {
+          "support": 35,
+          "tp": 26,
+          "fp": 39,
+          "fn": 9,
+          "precision": 0.4,
+          "recall": 0.743,
+          "f1": 0.52
+        },
+        "D1": {
+          "support": 67,
+          "tp": 40,
+          "fp": 6,
+          "fn": 27,
+          "precision": 0.87,
+          "recall": 0.597,
+          "f1": 0.708
+        },
+        "D2": {
+          "support": 26,
+          "tp": 15,
+          "fp": 0,
+          "fn": 11,
+          "precision": 1.0,
+          "recall": 0.577,
+          "f1": 0.732
+        },
+        "D3": {
+          "support": 49,
+          "tp": 45,
+          "fp": 22,
+          "fn": 4,
+          "precision": 0.672,
+          "recall": 0.918,
+          "f1": 0.776
+        }
+      },
+      "micro": {
+        "precision": 0.781,
+        "recall": 0.691,
+        "f1": 0.733
+      },
+      "macro_f1": 0.71,
+      "confusion": {
+        "C1": {
+          "B4": 1,
+          "B1": 5
+        },
+        "C3": {
+          "B4": 2,
+          "D3": 4,
+          "C4": 2
+        },
+        "D1": {
+          "C4": 9,
+          "B3": 1,
+          "C2": 5,
+          "B1": 5
+        },
+        "C4": {
+          "B4": 2,
+          "D1": 2
+        },
+        "C2": {
+          "B4": 2,
+          "D3": 4
+        },
+        "B2": {
+          "D3": 13,
+          "B4": 3
+        },
+        "A1": {
+          "A3": 3,
+          "B4": 1
+        },
+        "A3": {
+          "D3": 3,
+          "D1": 5
+        },
+        "D2": {
+          "D3": 3
+        }
+      }
+    },
+    "risk": {
+      "mae": 8.03,
+      "over_threshold_pct": 11.2,
+      "over_threshold_count": 65,
+      "count": 578
+    }
+  },
+  "full_system": {
+    "patterns": {
+      "per_pattern": {
+        "A1": {
+          "support": 35,
+          "tp": 30,
+          "fp": 0,
+          "fn": 5,
+          "precision": 1.0,
+          "recall": 0.857,
+          "f1": 0.923
+        },
+        "A2": {
+          "support": 30,
+          "tp": 28,
+          "fp": 0,
+          "fn": 2,
+          "precision": 1.0,
+          "recall": 0.933,
+          "f1": 0.966
+        },
+        "A3": {
+          "support": 59,
+          "tp": 47,
+          "fp": 3,
+          "fn": 12,
+          "precision": 0.94,
+          "recall": 0.797,
+          "f1": 0.862
+        },
+        "B1": {
+          "support": 22,
+          "tp": 20,
+          "fp": 11,
+          "fn": 2,
+          "precision": 0.645,
+          "recall": 0.909,
+          "f1": 0.755
+        },
+        "B2": {
+          "support": 62,
+          "tp": 33,
+          "fp": 0,
+          "fn": 29,
+          "precision": 1.0,
+          "recall": 0.532,
+          "f1": 0.695
+        },
+        "B3": {
+          "support": 63,
+          "tp": 56,
+          "fp": 10,
+          "fn": 7,
+          "precision": 0.848,
+          "recall": 0.889,
+          "f1": 0.868
+        },
+        "B4": {
+          "support": 47,
+          "tp": 43,
+          "fp": 12,
+          "fn": 4,
+          "precision": 0.782,
+          "recall": 0.915,
+          "f1": 0.843
+        },
+        "C1": {
+          "support": 22,
+          "tp": 12,
+          "fp": 5,
+          "fn": 10,
+          "precision": 0.706,
+          "recall": 0.545,
+          "f1": 0.615
+        },
+        "C2": {
+          "support": 52,
+          "tp": 0,
+          "fp": 5,
+          "fn": 52,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "C3": {
+          "support": 16,
+          "tp": 8,
+          "fp": 0,
+          "fn": 8,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.667
+        },
+        "C4": {
+          "support": 35,
+          "tp": 26,
+          "fp": 38,
+          "fn": 9,
+          "precision": 0.406,
+          "recall": 0.743,
+          "f1": 0.525
+        },
+        "D1": {
+          "support": 67,
+          "tp": 40,
+          "fp": 5,
+          "fn": 27,
+          "precision": 0.889,
+          "recall": 0.597,
+          "f1": 0.714
+        },
+        "D2": {
+          "support": 26,
+          "tp": 15,
+          "fp": 0,
+          "fn": 11,
+          "precision": 1.0,
+          "recall": 0.577,
+          "f1": 0.732
+        },
+        "D3": {
+          "support": 49,
+          "tp": 45,
+          "fp": 22,
+          "fn": 4,
+          "precision": 0.672,
+          "recall": 0.918,
+          "f1": 0.776
+        }
+      },
+      "micro": {
+        "precision": 0.784,
+        "recall": 0.689,
+        "f1": 0.733
+      },
+      "macro_f1": 0.71,
+      "confusion": {
+        "C1": {
+          "B4": 1,
+          "B1": 5
+        },
+        "C3": {
+          "B4": 2,
+          "D3": 4,
+          "C4": 2
+        },
+        "D1": {
+          "C4": 9,
+          "B3": 1,
+          "C2": 5,
+          "B1": 5
+        },
+        "C4": {
+          "B4": 2,
+          "D1": 2
+        },
+        "C2": {
+          "B4": 2,
+          "D3": 4
+        },
+        "B2": {
+          "D3": 13,
+          "B4": 3
+        },
+        "A1": {
+          "A3": 3,
+          "B4": 1
+        },
+        "A3": {
+          "D3": 3,
+          "D1": 5
+        },
+        "D2": {
+          "D3": 3
+        }
+      }
+    },
+    "risk": {
+      "mae": 7.18,
+      "over_threshold_pct": 8.8,
+      "over_threshold_count": 51,
+      "count": 578
+    }
+  },
+  "by_category": {
+    "fraud": {
+      "conversations": 40,
+      "final_score_mae": 30.62
+    },
+    "normal": {
+      "conversations": 40,
+      "final_score_mae": 1.38
+    },
+    "suspicious": {
+      "conversations": 20,
+      "final_score_mae": 14.25
+    }
+  }
+}
