@@ -3,10 +3,15 @@
 # แยกจาก backend/requirements.txt และ scripts/requirements.txt เพราะชุดนี้หนักมาก (torch ~2.5GB)
 # และไม่ได้ใช้บนเครื่องที่รัน backend จริง — ติดตั้งเฉพาะบนเครื่อง GPU ที่ใช้เทรน
 #
-# ติดตั้งใน venv แยกเสมอ อย่าลงทับ environment ของ Jupyter kernel:
-#     python -m venv ~/safetrade/venv-dpo
-#     ~/safetrade/venv-dpo/bin/pip install -r requirements-dpo.txt
-#     ~/safetrade/venv-dpo/bin/python train_dpo.py --dry-run
+# ต้องใช้ Python 3.9+ (image ของ LiCO เป็น 3.8) — ใช้ uv ติดตั้ง Python 3.11 ลง venv แยก:
+#     curl -LsSf https://astral.sh/uv/install.sh | sh
+#     ~/.local/bin/uv venv --python 3.11 venv-dpo
+#     ~/.local/bin/uv pip install --python venv-dpo/bin/python \
+#         --index-strategy unsafe-best-match -r requirements-dpo.txt
+#     venv-dpo/bin/python train_dpo.py --dry-run --output-dir dpo_out
+#
+# driver ของเครื่อง LiCO คือ 525 (รองรับถึง CUDA 12.0) ถ้า torch.cuda.is_available() เป็น False
+# ให้เปลี่ยน cu124 ข้างล่างเป็น cu118
 #
 # หมายเหตุเรื่องเวอร์ชัน: ชุดนี้ pin ไว้เพราะ TRL เปลี่ยน API บ่อย (DPOConfig, processing_class)
 # train_dpo.py ตรวจเวอร์ชันเองตอนเริ่มและปรับให้ได้ระดับหนึ่ง แต่ถ้า image ของคลัสเตอร์มี
